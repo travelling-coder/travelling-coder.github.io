@@ -292,6 +292,7 @@ function checkboxOn(x){
 
 window.onpopstate = function(){
 	// console.log(1)
+	// console.log(window.location.href.split("?")[1])
 	if(!window.location.href.split("?")[1]){
 		return
 	}
