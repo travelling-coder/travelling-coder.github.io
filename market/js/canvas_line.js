@@ -32,7 +32,6 @@
 			
 			function clearButton(){
 				ctx2.clearRect(0,0,600,300)
-				// console.log("lineClearUp")
 			}
 			
 			function max_num(){

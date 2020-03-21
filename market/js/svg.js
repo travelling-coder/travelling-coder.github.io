@@ -2,7 +2,6 @@
 			var d = document.getElementById("svgDiv")
 			function creat_pic(arr,svg_id){
 				d.style.display = "block";
-				// console.log(d)
 				for(i = d.childNodes.length - 1; i > 0; i--){
 					d.childNodes[i].remove();
 				}
@@ -11,7 +10,6 @@
 				for(i = 2; i < arr.length; i++){
 					a.push(arr[i])
 				}
-				// console.log(a)
 				m.setAttribute("width",600)
 				m.setAttribute("height",300)
 				m.id = svg_id
@@ -32,7 +30,6 @@
 				var line = document.createElementNS('http://www.w3.org/2000/svg',"polyline")
 				line.setAttribute("points","50,50 50,250 540,250");
 				line.setAttribute("style","stroke: black;stroke-width: 2px;fill:white")
-				// console.log(line)
 				m.appendChild(line)
 				//创建框架
 				for(i = 1; i < 5; i++){
@@ -78,4 +75,3 @@
 				}
 				//直方图
 			}
-			// creat_pic(s,"svg1")

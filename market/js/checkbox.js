@@ -6,26 +6,20 @@ var checkTable = [];//获取所选的对应数组  用来创建table
 var checkboxAll_arr = [];//所有的checkbox的汇总
 var baseArr = [];
 function findArr(arr, indexOfimword){
-	// console.log(importWord)
 	indexOfimword = indexOfimword||0;
-	// console.log(indexOfimword)
 	var newarr = [];
 	table_title = ["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"];
 	table_title.unshift("地区");
-	// console.log(Object.keys(arr[0]))
 	if(indexOfimword == 1){
 		table_title.splice(1,0,"货品")
 	}
 	else{
 		table_title.unshift("货品");
-	}// console.log(importWord)
-	// console.log(indexOfimword)
+	}
 	//获取关键字
 	
-	// console.log(table_title)
 	var interimArr = [];
 	for(i in arr){
-		// console.log("in xunhuan")
 		interimArr.push([]);
 		var ss = Object.values(arr[i]);
 		for(s in ss[2]){
@@ -33,8 +27,6 @@ function findArr(arr, indexOfimword){
 		}
 		interimArr[i].unshift(ss[1 - indexOfimword]);
 		interimArr[i].unshift(ss[indexOfimword]);
-		// interimArr.push(Object.values(arr[i]));
-		// console.log(interimArr[i])
 		var mathOront = -1;
 		for(l in newarr){
 			if(interimArr[i][0] == newarr[l][0]){
@@ -49,11 +41,8 @@ function findArr(arr, indexOfimword){
 		}
 	}
 	//数组 按关键字 排序  已获得分好类的数组
-	// console.log(newarr)
 	return newarr;
 }
-// product: "手机",
-// region: "华北",   ,"region"
 function creatLable(name){
 	s = document.createElement("label");
 	s.innerHTML = name;
@@ -65,7 +54,6 @@ function creatChecked(name){
 	s.id = name;
 	s.type = "checkbox";
 	s.checked = true;
-	// console.log(s)
 	return s;
 }
 
@@ -81,9 +69,7 @@ function creatCheckbox(arr, parent){
 }
 
 function cleanTable(){
-	// console.log(table.childNodes)
 	for(i=table.childNodes.length - 1; i >= 0; i--){
-		// console.log(i)
 		table.childNodes[i].remove();
 	}
 	console.log("Table cleanup")
@@ -91,7 +77,6 @@ function cleanTable(){
 
 function creatTable(arr){
 	cleanTable();
-	// console.log(table_title)
 	var new_tr = document.createElement("tr");
 	for(i in table_title){
 		var new_td = document.createElement("td");
@@ -180,10 +165,8 @@ function creatTable(arr){
 			// 		// console.log(event.target)
 			// 	},false)
 			// }
-			// // else{
 			if(j<2){
 				new_td.className = "color-off"
-				// console.log(new_td)
 			}
 			new_tr.appendChild(new_td);
 		}
@@ -192,7 +175,6 @@ function creatTable(arr){
 	tableClass()
 	for(i = 1; i < table.rows.length; i++){
 		for(j = 2; j < table.rows[i].cells.length; j++){
-			// console.log(table.rows[i].cells[j])
 			table.rows[i].cells[j].onclick = tdOn_click
 			table.rows[i].cells[j].onmouseenter = mousein
 			table.rows[i].cells[j].onmouseleave = mouseoff
@@ -204,7 +186,6 @@ function creatTable(arr){
 function check_arr(){
 	var s = [], l = [],
 		a, b, c, d;
-	// console.log(sourceData)
 	for(i in sourceData){
 		a = sourceData[i].product;
 		b = sourceData[i].region;
@@ -231,12 +212,10 @@ function check_arr(){
 }
 
 function checkboxOn(x){
-	// console.log(this)
 	checkBox_on_A = [];
 	checkBox_on_B = [];
 	var p = [], r = [];
 	var c = document.getElementsByTagName("input");
-	// console.log(c)
 	for(i = 0; i < checkArr_A.length; i++){
 		if(c[i].checked == true){
 			checkBox_on_A.push(c[i].id)
@@ -292,6 +271,7 @@ function checkboxOn(x){
 
 window.onpopstate = function(){
 	// console.log(1)
+	// console.log(window.location.href.split("?")[1])
 	if(!window.location.href.split("?")[1]){
 		return
 	}
@@ -404,13 +384,9 @@ function checkAll(){
 function tableClass(){
 	var s = null, len = table.rows, n;
 	for(i = 1; i < len.length; i++){
-		// console.log(i)
-		// console.log(s)
-		// console.log(s)
 		if(s != len[i].cells[0].innerHTML){
 			s = len[i].cells[0].innerHTML;
 			n = 1;
-			// console.log(n)
 			for(j = i; j < len.length - 1; j++){
 				if(s != len[j + 1].cells[0].innerHTML){
 					break;
