@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/31-41.css"/>
+		<script src="js/data.js" type="text/javascript" charset="utf-8"></script>
+	<meta name="generator" content="Hexo 4.2.0"></head>
+	<body onload="load()">
+		<!-- <p>123</p>
+		<button type="button" onclick="c()">1</button> -->
+		<div id="checkboxDiv" style="margin-top: 30px;">
+			<p>——————————请选择类型——————————</p><button type="button" onclick="reset()">重置</button>
+		</div>
+		<div id="">
+			<div id="svgDiv" style="position: relative;height: 304px;">
+				<p>销量直方图</p>
+			</div>	
+			<div style="position: relative; width: 600px; height: 300px;margin: 0 auto;box-sizing: content-box;padding: 0;border: none;">
+				<canvas id="canvasLine" width="600" height="300" style="position: absolute;left: 0;top: 0;"></canvas>
+				<canvas id="mouseOnLine" width="600" height="300" style="position: absolute;left: 0;top: 0;"></canvas>
+			</div>
+		</div>
+		<table border="1px" cellspacing="0" cellpadding="3" id="saleInformation"></table>
+		<script src="js/checkbox.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/dataClick.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/svg.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/canvas_line.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/begin.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
+

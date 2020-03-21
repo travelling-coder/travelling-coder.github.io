@@ -1,0 +1,78 @@
+body{
+	margin: 0px;
+	border: 1px solid black;
+	font-family: "verdana, geneva, arial, helvetica, sans-serif";
+	min-width: 1280px;
+}
+p{
+	margin: 5px;
+	padding: 0;
+	font-size: 20px;
+	/* border: 1px solid black; */
+}
+div{
+	margin: 20px;
+	box-sizing: border-box;
+	width: calc(100% - 40px);
+	border: 1px solid black;
+	padding: 10px;
+	text-align: center;
+	/* height: 20px; */
+}
+th,td{
+	width: 80px;
+	height: 35px;
+	text-align: center;
+	/* border: none; */
+	margin: 30px;
+	position: relative;
+}
+#inputDiv{
+	width: 100px;
+	height: 30px;
+	position: absolute;
+	top: -40%;
+	left: -20%;
+	box-sizing: border-box;
+	border: 1px solid black;
+	background-color: white;
+	z-index: 1;
+	padding: 0px;
+}
+#inputNum{
+	margin: 0;
+	box-sizing: border-box;
+	width: 100px;
+	height: 20px;
+}
+/* td:hover{
+	background-color: #0C1370;
+	color: white;
+}
+
+tr:hover{
+	background-color: #7FFFD4;
+} */
+/* 鼠标悬停行变色 */
+table{
+	margin: 20px auto;
+}
+label{
+	margin-left: 30px;
+}
+.td-hover{
+	background-color: #0C1370;
+	color: white;
+}
+.hover{
+	background-color: #7FFFD4;
+}
+.color-off{
+	background-color: white;
+	color: black;
+}
+button{
+	display: block;
+	float: right;
+	margin: 0;
+}
