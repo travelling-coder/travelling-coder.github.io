@@ -7,10 +7,10 @@
 
     
 
-    <title>Hello World | Travelling</title>
+    <title>Git个人主页的建立 | Travelling</title>
     <meta name="author" content="Travelling" />
     <meta name="keywords" content="" />
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.Quick StartCreate a new post1$ hexo new &#34;My New Post..." />
+    <meta name="description" content="写在前面：一开始我的git只是用来当远程仓库的，后来因为搭建个人blog的免费方法需要用到git的个人主页，才开始摸索起这条路来。git个人主页的搭建：其实总的来说，git个人主页的搭建其实并不麻烦，主要分三个步骤就ok假设你的git账号名是abcd123，那么首先登陆你的github，然后创建一个名为abcd123.io的仓库。注意：仓库名一定是你的git账号名.io  把新建的仓库clone到本地，git客户端命令是：1git clone https:&amp;#x2F;&amp;#x2F;git..." />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
 
@@ -66,7 +66,7 @@
             </a>
         
             <a class="nav-item" href="/tags/">
-                <span class="nav-text">分类</span>
+                <span class="nav-text">标签</span>
             </a>
         
             <a class="nav-item" href="/categories/demo/">
@@ -74,7 +74,7 @@
             </a>
         
             <a class="nav-item" href="/categories/doc/">
-                <span class="nav-text">文档</span>
+                <span class="nav-text">doc</span>
             </a>
         
             <a class="nav-item" href="/about">
@@ -95,7 +95,7 @@
         
 
         
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hello-world"><span class="toc-number">1.5.</span> <span class="toc-text">hello world</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#写在前面："><span class="toc-number">1.</span> <span class="toc-text">写在前面：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git个人主页的搭建："><span class="toc-number">2.</span> <span class="toc-text">git个人主页的搭建：</span></a></li></ol>
         
     </div>
 </aside>
@@ -109,21 +109,21 @@
     <header class="article-header">
         
         <h1 itemprop="name">
-            Hello World
+            Git个人主页的建立
         </h1>
         
         <div class="article-meta clearfix">
-            <a class="article-date" href="www.programape.top/2020/03/18/hello-world/index.html">
+            <a class="article-date" href="www.programape.top/2020/03/22/Git%E4%B8%AA%E4%BA%BA%E4%B8%BB%E9%A1%B5%E7%9A%84%E5%BB%BA%E7%AB%8B/index.html">
     
     <i class="icon-calendar"></i>
     
-    <time datetime="2020-03-18T09:09:02.935Z" itemprop="datePublished">2020-03-18</time>
+    <time datetime="2020-03-22T08:17:09.000Z" itemprop="datePublished">2020-03-22</time>
 </a>
 
             
 <div class="article-tag-list">
     <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/%E6%96%87%E7%AB%A0/" rel="tag">文章</a>
+    <a class="article-tag-link" href="/tags/git/" rel="tag">git</a>, <a class="article-tag-link" href="/tags/%E4%B8%BB%E9%A1%B5/" rel="tag">主页</a>, <a class="article-tag-link" href="/tags/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B/" rel="tag">从零开始</a>
 </div>
 
 
@@ -132,28 +132,26 @@
     
     <section class="article-body markdown-body">
         
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <h4 id="写在前面："><a href="#写在前面：" class="headerlink" title="写在前面："></a>写在前面：</h4><pre><code>一开始我的git只是用来当远程仓库的，后来因为搭建个人blog的免费方法需要用到git的个人主页，才开始摸索起这条路来。</code></pre><h4 id="git个人主页的搭建："><a href="#git个人主页的搭建：" class="headerlink" title="git个人主页的搭建："></a>git个人主页的搭建：</h4><pre><code>其实总的来说，git个人主页的搭建其实并不麻烦，主要分三个步骤就ok</code></pre><ol>
+<li>假设你的git账号名是abcd123，那么首先登陆你的github，然后创建一个名为abcd123.io的仓库。<strong>注意：</strong>仓库名一定是<em>你的git账号名</em>.io  </li>
+<li>把新建的仓库clone到本地，git客户端命令是：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;abcd123&#x2F;abcd123.github.io.git</span><br></pre></td></tr></table></figure>
+<a id="more"></a></li>
+<li>在本地仓库中新建一个index.html,然后push到你的远程仓库，方法如下：在git客户端执行<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add index.html</span><br><span class="line">git commit</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<p>三步执行完毕，你就可以通过 abcd123.github.io来访问你的个人主页，也就代表你的个人主页建立成功了。  </p>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-<h3 id="hello-world"><a href="#hello-world" class="headerlink" title="hello world"></a>hello world</h3>
         
     </section>
 </article>
 
 
 
+<a id="pagenext" href="/2020/03/22/Git%E7%9A%84%E4%BD%BF%E7%94%A8/" class="article-next" title="Git的使用"><i class="icon-arrow-right"></i></a>
 
-<a id="pageprev" href="/2020/03/19/restaurant/" class="article-prev" title="模拟餐厅"><i class="icon-arrow-left"></i></a>
+
+<a id="pageprev" href="/2020/03/22/%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BAblog/" class="article-prev" title="建立个人blog"><i class="icon-arrow-left"></i></a>
 
 
 
@@ -167,11 +165,11 @@
         repo: "travelling-coder.github.io",
         owner: "travelling-coder",
         admin: ["travelling-coder"],
-        id: "2020/03/18/hello-world",
+        id: "2020/03/22/Git个人主页的建立",
         distractionFreeMode: true,
-        title: "Hello World",
-        body: "www.programape.top/2020/03/18/hello-world/",
-        labels: ["文章"]
+        title: "Git个人主页的建立",
+        body: "www.programape.top/2020/03/22/Git%E4%B8%AA%E4%BA%BA%E4%B8%BB%E9%A1%B5%E7%9A%84%E5%BB%BA%E7%AB%8B/",
+        labels: ["git","从零开始","主页"]
     }).render('comments');
     </script>
 </div>
@@ -247,7 +245,7 @@
             if(space > avg) {
                 var len = space - avg / 2;
                 var styles = {position: 'fixed', top: '50%', marginTop: - (pageprev.width() + pagenext.width()) / 4}
-                pageprev.css($.extend({left: hw + len}, styles));
+                pageprev.css($.extend({left: len + avg}, styles));
                 pagenext.css($.extend({right: len}, styles));
             } else {
                 pageprev.removeAttr('style');

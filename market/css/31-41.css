@@ -8,7 +8,6 @@ p{
 	margin: 5px;
 	padding: 0;
 	font-size: 20px;
-	/* border: 1px solid black; */
 }
 div{
 	margin: 20px;
@@ -17,13 +16,11 @@ div{
 	border: 1px solid black;
 	padding: 10px;
 	text-align: center;
-	/* height: 20px; */
 }
 th,td{
 	width: 80px;
 	height: 35px;
 	text-align: center;
-	/* border: none; */
 	margin: 30px;
 	position: relative;
 }
@@ -45,15 +42,6 @@ th,td{
 	width: 100px;
 	height: 20px;
 }
-/* td:hover{
-	background-color: #0C1370;
-	color: white;
-}
-
-tr:hover{
-	background-color: #7FFFD4;
-} */
-/* 鼠标悬停行变色 */
 table{
 	margin: 20px auto;
 }

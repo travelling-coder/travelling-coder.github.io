@@ -148,6 +148,7 @@
   text-align: center;
   color: #999;
   font-size: 42px;
+  margin-left: -100px;
 }
 .article-prev:hover,
 .article-next:hover {

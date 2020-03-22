@@ -16,7 +16,7 @@ function tdOn_click(){
 		}
 	}
 	if(this.innerText.charAt(0) == "N"||this.parentElement.innerText.charAt(0) == "N"){
-		console.log(this.parentElement)
+		// console.log(this.parentElement)
 		return
 	}
 	if(clicknum.length == 4){

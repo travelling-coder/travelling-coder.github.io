@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+
+    
+
+    
+
+    <title>输入邮箱自提醒 | Travelling</title>
+    <meta name="author" content="Travelling" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="写在之前本例是模拟的邮箱输入。使用控制台可以看到全部的代码，所以就不贴代码啦。↓↓demo↓↓  试试输入中文、数字和英文，上下键和鼠标选择，esc，删除信息。										.emailCin{				width: 300px;				margin: 20px auto;			}			#emailIput{				width: 300px;				height: 30px;				box-sizing: border-box;				/* border..." />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+
+    
+    <link rel="alternate" href="/atom.xml" title="Travelling" type="application/atom+xml">
+    
+    
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'icomoon';
+        src: url("/fonts/icomoon.eot?q628ml");
+        src: url("/fonts/icomoon.eot?q628ml#iefix") format('embedded-opentype'),
+             url("/fonts/icomoon.ttf?q628ml") format('truetype'),
+             url("/fonts/icomoon.woff?q628ml") format('woff'),
+             url("/fonts/icomoon.svg?q628ml#icomoon") format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+    </style>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!--[if lt IE 9]>
+    <style type="text/css">
+    .nav-inner {top:0;}
+    .author-meta {position:static;top:0;}
+    .search-form {height:36px;}
+    </style>
+    <script type="text/javascript" src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <main class="app">
+        <header id="header" class="header clearfix">
+    <div id="nav" class="nav">
+    <div class="nav-mobile">
+        <button id="open-panel" class="open-panel nav-mobile-item"><i class="icon-documents"></i></button>
+        <h1 class="nav-mobile-title nav-mobile-item">Travelling</h1>
+        <button id="open-menus" class="open-panel nav-mobile-item"><i class="icon-library"></i></button>
+    </div>
+
+    <nav id="nav-inner" class="nav-inner">
+        
+            <a class="nav-item" href="/">
+                <span class="nav-text">首页</span>
+            </a>
+        
+            <a class="nav-item" href="/archives">
+                <span class="nav-text">归档</span>
+            </a>
+        
+            <a class="nav-item" href="/tags/">
+                <span class="nav-text">标签</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/demo/">
+                <span class="nav-text">demo</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/doc/">
+                <span class="nav-text">doc</span>
+            </a>
+        
+            <a class="nav-item" href="/about">
+                <span class="nav-text">关于</span>
+            </a>
+        
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <!-- <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="www.programape.top"></form> -->
+
+        
+        
+        
+        
+
+        
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#写在之前"><span class="toc-number">1.</span> <span class="toc-text">写在之前</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#↓↓demo↓↓"><span class="toc-number">2.</span> <span class="toc-text">↓↓demo↓↓</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实现功能"><span class="toc-number">3.</span> <span class="toc-text">实现功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#问题与解决方法"><span class="toc-number">4.</span> <span class="toc-text">问题与解决方法</span></a></li></ol>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content">
+            <div id="wrapper" class="wrapper" style="max-width: 800px">
+                <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            输入邮箱自提醒
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="www.programape.top/2020/03/22/inputEmail/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2020-03-22T13:13:59.000Z" itemprop="datePublished">2020-03-22</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/css/" rel="tag">css</a>, <a class="article-tag-link" href="/tags/reg/" rel="tag">reg</a>, <a class="article-tag-link" href="/tags/%E9%98%B2%E5%91%86/" rel="tag">防呆</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h4 id="写在之前"><a href="#写在之前" class="headerlink" title="写在之前"></a>写在之前</h4><pre><code>本例是模拟的邮箱输入。使用控制台可以看到全部的代码，所以就不贴代码啦。</code></pre><h4 id="↓↓demo↓↓"><a href="#↓↓demo↓↓" class="headerlink" title="↓↓demo↓↓"></a>↓↓demo↓↓</h4><p>  试试输入中文、数字和英文，上下键和鼠标选择，esc，删除信息。</p>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.emailCin{
+				width: 300px;
+				margin: 20px auto;
+			}
+			#emailIput{
+				width: 300px;
+				height: 30px;
+				box-sizing: border-box;
+				/* border: 1px solid black; */
+				/* border-radius: 4px; */
+				padding-left: 10px;
+				font-size: 17px;
+			}
+			#emailUl{
+				/* display: block; */
+				display: none;
+				padding: 0;
+				border: 1px solid rgba(0, 0, 0, 0.35);
+				list-style-type: none;
+				margin: 0;
+				box-sizing: border-box;
+				border-top-width: 0;
+			}
+			#emailUl li{
+				/* border: 1px solid red; */
+				box-sizing: border-box;
+				padding: 5px 0px 5px 5px;
+				margin: 0px;
+				display: block;
+				border: none;
+				width: 100%;
+				font-size: 14px;
+				/* float: left; */
+			}
+			#emailUl li:hover{
+				background-color: rgb(33, 240, 240);
+				color: white;
+				font-size: 17px;
+			}
+			.off{
+				background-color: white;
+				color: #000000;
+				font-size: 14px;
+			}
+			.liCheckedd{
+				background-color: rgb(240, 100, 35);
+				color: white;
+				font-size: 17px;
+			}
+			#footerP{
+				margin-top: 30px;
+				text-align: center;
+				line-height: 30px;
+				color: white;
+				display: none;
+				width: 100%;
+				height: 30px;
+				background-color: #000000;
+			}
+		</style>
+	<meta name="generator" content="Hexo 4.2.0"></head>
+	<body onload="load()">
+		<div class="emailCin" >
+			<input type="email" name="" id="emailIput" value="" placeholder="please cin email"/>
+			<ul id="emailUl">
+			</ul>
+		</div>
+		<p id="footerP">未输入或输入不正确，请检查并重新输入！</p>
+		<script type="text/javascript">
+			var liList = ['@163.com', '@gmail.com', '@126.com', '@qq.com', '@263.net', '@yahoo.com', '@tom.com', '@188.com'];
+			var ulNode = document.getElementById("emailUl"),m = 0,n,
+				inputNode = document.getElementById("emailIput");
+			function inputChange(){
+				var checked = inputCheck();// checked[1] @之前的数据  checked[2]   @及之后的数据
+				var liArr = document.getElementsByTagName("li"), liindex = 1;
+				if(!checked){
+					//此处判断没有输入内容或输入内容出错
+					ulOff();
+					return;
+				}1
+				if(!checked[2]){
+					ulOn();
+					for(i in liList){ 
+						document.getElementById(i).style.display = "block";
+						document.getElementById(i).innerHTML = checked[1] + liList[i];
+						// console.log(liindex,"index",i);
+						if(liindex == 1){
+							n = i;
+							// console.log(n)
+							liindex = -1;
+						}
+					}
+				}
+				else{
+					ulOn();
+					for(i in liList){
+						if(checked[2] == liList[i]){
+							document.getElementById(i).style.display = "none";
+							return;
+						}
+						if(liList[i].match(checked[2])){
+							document.getElementById(i).style.display = "block";
+							// console.log(liindex,"@index",i);
+							if(liindex == 1){
+								n = i;
+								liindex = 0;
+							}
+						}
+						else document.getElementById(i).style.display = "none";
+					}
+				}
+				changeColor(m,n);
+				m = liChecked()
+				// console.log("  once  ")
+			}
+			function emailKeyEvent(){
+				if(event.keyCode == 38){
+					var s = Number(liChecked());
+					function up(){
+						s = s - 1;
+						if(s == -1){
+							s = document.getElementsByTagName("li").length - 1;
+						}
+						if(document.getElementById(s).style.display == "none"){
+							up();
+						}
+					}
+					up();
+					document.getElementById(liChecked()).className = "off";
+					document.getElementById(s).className = "liCheckedd";
+					m=s;
+				}
+				if(event.keyCode == 40){
+					var s = Number(liChecked());
+					function down(){
+						s = s + 1;
+						if(s == document.getElementsByTagName("li").length){
+							s = 0;
+						}
+						if(document.getElementById(s).style.display == "none"){
+							down();
+						}
+					}
+					down();
+					document.getElementById(liChecked()).className = "off";
+					document.getElementById(s).className = "liCheckedd";
+					m=s;
+				}
+				if(event.keyCode == 13){
+					inputNode.value = document.getElementById(liChecked()).textContent;
+					document.getElementById("emailUl").style.display = "none";
+				}
+				if(event.keyCode == 27){
+					inputNode.select()
+				}
+			}
+			function inputCheck(){
+				return /^(\w+)(@\w*(\.\w*)?)?$/.exec(inputNode.value.replace(/ /g,""));
+			}
+			function liClick(){
+				inputNode.value = this.innerHTML;
+				ulNode.style.display = "none" //试试调用inputchange
+			}
+			function ulOn(){
+				document.getElementById("footerP").style.display = "none";
+				document.getElementById("emailUl").style.display = "block";
+			}
+			function ulOff(){
+				document.getElementById("footerP").style.display = "block";
+				document.getElementById("emailUl").style.display = "none";
+			}
+			function liChecked(){
+				var s = 0;
+				for(i in liList){
+					if(document.getElementById(i).className == "liCheckedd"){
+						return s = i;
+					}
+				}
+				return s;
+			}
+			function changeColor(checkedNum,tocheckNum){
+				// console.log("color 在  ",checkedNum," 目标位置  ",tocheckNum)
+				// console.log(document.getElementById(checkedNum))
+				// console.log(document.getElementById(checkedNum).style.display)
+				if( document.getElementById(checkedNum).style.display == "none" || document.getElementById(checkedNum).className != "liCheckedd"){
+					document.getElementById(checkedNum).className = "off";
+					document.getElementById(tocheckNum).className = "liCheckedd";
+					// console.log("变更")
+				}
+			}
+			function load(){
+				for(i in liList){
+					var s = document.createElement("li");
+					s.id =  i;
+					s.innerHTML = liList[i];
+					s.onclick = liClick;
+					ulNode.appendChild(s);
+				}
+				document.getElementById("emailIput").focus();
+				document.getElementById("emailIput").onblur = function(){
+					document.getElementById("emailIput").focus()
+				}
+				document.addEventListener("keydown",emailKeyEvent);
+				inputNode.addEventListener("keydown",function(){
+					if(event.keyCode == 38 || event.keyCode == 40){
+						event.preventDefault()
+					}
+				})
+				document.getElementById("emailIput").addEventListener("input",inputChange);
+			}
+		</script>
+	</body>
+</html>
+
+
+<a id="more"></a>
+
+<h4 id="实现功能"><a href="#实现功能" class="headerlink" title="实现功能"></a>实现功能</h4><p>  其实本例的功能很简单，无非就一个，输入信息根据信息生成对应邮箱地址。相对的难点就在于，输入信息和后续信息的拼接问题、输入信息的防呆处理。<br>总的来说，是个很简单的demo。</p>
+<h4 id="问题与解决方法"><a href="#问题与解决方法" class="headerlink" title="问题与解决方法"></a>问题与解决方法</h4><p>  信息拼接问题和防呆处理</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function inputCheck()&#123;</span><br><span class="line">	return &#x2F;^(\w+)(@\w*(\.\w*)?)?$&#x2F;.exec(inputNode.value.replace(&#x2F; &#x2F;g,&quot;&quot;));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  reg内容是以数字或字母开头，中间拼接任意个数字或字母，再拼接由0或1个”@”和任意个数字或字母组合的字符串，再拼接0或1个由”.”和任意个数字或字母组合的字符串。<br>  而整段代码是判断输入内容是否符合给出的标准。而通过reg匹配可以得到”@”或者”.”之前的字符串，再与其他的字符串组合即可。</p>
+<p>  此处还有一个问题，就是我在md中写入的代码，在结束代码之后，还会有代码中的css影响代码外的布局的情况出现。本例就是个例子，虽然使用id选择器可以限制css生效范围，但是若不限制，则会影响到所有的对应dom。</p>
+
+        
+    </section>
+</article>
+
+
+
+<a id="pagenext" href="/2020/03/22/%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BAblog/" class="article-next" title="建立个人blog"><i class="icon-arrow-right"></i></a>
+
+
+<a id="pageprev" href="/2020/03/22/http%E5%8D%8F%E8%AE%AE%E6%80%BB%E7%BB%93/" class="article-prev" title="http协议总结"><i class="icon-arrow-left"></i></a>
+
+
+
+<div class="comments">
+    <div id="comments"></div>
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+    new Gitalk({
+        clientID: "e190f11846edf6d4039b",
+        clientSecret: "01264c9dcb3d01120050f1536accb08187e01cc3",
+        repo: "travelling-coder.github.io",
+        owner: "travelling-coder",
+        admin: ["travelling-coder"],
+        id: "2020/03/22/inputEmail",
+        distractionFreeMode: true,
+        title: "输入邮箱自提醒",
+        body: "www.programape.top/2020/03/22/inputEmail/",
+        labels: ["css","防呆","reg"]
+    }).render('comments');
+    </script>
+</div>
+
+
+            </div>
+        </div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+
+    
+</footer>
+
+    </main>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var nodes = {
+            nav: $('#nav'),
+            aside: $('#aside'),
+            asideInner: $('#aside-inner'),
+            navInner: $('#nav-inner')
+        };
+
+        var doing = false;
+        nodes.asideInner.on('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function() {
+            if (nodes.aside.hasClass('mobile-open')) {
+                nodes.aside.removeClass('mobile-open');
+            } else {
+                nodes.aside.removeClass('mobile-close panel-show');
+            }
+            doing = false;
+        });
+        $('#open-panel, #aside-mask').on('click', function() {
+            if (doing) {
+                return;
+            }
+
+            if (nodes.aside.hasClass('panel-show')) {
+                nodes.aside.addClass('mobile-close');
+            } else {
+                nodes.aside.addClass('mobile-open panel-show');
+            }
+        });
+        $('#open-menus').on('click', function() {
+            nodes.navInner.slideToggle();
+        });
+
+        if (window.innerWidth <= 960) {
+            setTimeout(function() {
+                nodes.navInner.slideUp();
+            }, 3000);
+        }
+    });
+    </script>
+    
+        
+<script src="/js/scrollspy.min.js"></script>
+
+        <script type="text/javascript">
+        $(document.body).scrollspy({target: '#aside-inner'});
+
+        $(window).on('resize', function() {
+            var hw = $('#header').width();
+            var ww = $('#wrapper').width();
+            var space = ($(this).width() - hw - ww) / 2 / 2;
+
+            var pageprev = $('#pageprev');
+            var pagenext = $('#pagenext');
+            var avg = (pageprev.width() + pagenext.width()) / 2
+
+            if(space > avg) {
+                var len = space - avg / 2;
+                var styles = {position: 'fixed', top: '50%', marginTop: - (pageprev.width() + pagenext.width()) / 4}
+                pageprev.css($.extend({left: len + avg}, styles));
+                pagenext.css($.extend({right: len}, styles));
+            } else {
+                pageprev.removeAttr('style');
+                pagenext.removeAttr('style');
+            }
+        }).trigger('resize');
+        </script>
+    
+
+</body>
+</html>
