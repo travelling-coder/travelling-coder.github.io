@@ -338,10 +338,10 @@
 					s.onclick = liClick;
 					ulNode.appendChild(s);
 				}
-				document.getElementById("emailIput").focus();
-				document.getElementById("emailIput").onblur = function(){
-					document.getElementById("emailIput").focus()
-				}
+				//document.getElementById("emailIput").focus();
+				//document.getElementById("emailIput").onblur = function(){
+				//	document.getElementById("emailIput").focus()
+				//}
 				document.addEventListener("keydown",emailKeyEvent);
 				inputNode.addEventListener("keydown",function(){
 					if(event.keyCode == 38 || event.keyCode == 40){
