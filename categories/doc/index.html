@@ -217,37 +217,14 @@
 <h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><p>  建立自己的github个人主页，参考我的<br>  <a href="/2020/03/22/Git个人主页的建立/">Git个人主页的建立</a><br>  <a href="/2020/03/22/Git的使用/">Git使用</a></p>
 <hr>
 <h4 id="那么现在开始吧。"><a href="#那么现在开始吧。" class="headerlink" title="那么现在开始吧。"></a>那么现在开始吧。</h4><h5 id="域名注册"><a href="#域名注册" class="headerlink" title="域名注册"></a>域名注册</h5><p>  选一个你喜欢的服务商（如阿里云、腾讯云、天翼云等等），然后想一个域名名字，查询这个域名是否已经有人买下了。如我是在阿里云里买的域名：programape.top。</p>
-<h5 id="域名和主页的联系"><a href="#域名和主页的联系" class="headerlink" title="域名和主页的联系"></a>域名和主页的联系</h5><p>  域名买下之后就是把个人主页和域名联系起来。方法是在域名管理里会有一个解析，如下图<br>  <img src="/blog1.png" alt="域名的解析"><br>  在解析里面添加两条记录<br>  记录类型选择CNAME，主机记录为 “@”和“www”，记录值为你的主页页面。然后再在git主页的仓库中添加一个CNAME文件，内容为你的域名，如我的就是“<a href="http://www.programape.top”" target="_blank" rel="noopener">www.programape.top”</a><br>  这样你访问域名的时候就会解析为对应主页的页面了。</p>
-<h5 id="主题的选择"><a href="#主题的选择" class="headerlink" title="主题的选择"></a>主题的选择</h5><p>  接下来就该开始选blog主题了。网上有很多相关的教程，我看了很多资料，最后选择了hexo，它是一种快速高效的blog框架。进入hexo主页，跟着内容安装hexo，然后就是选择一个你觉得不错的模板。因为hexo上的模板都是放在git上的，所以需要用git将你选中的模板clone到本地，或者直接下载压缩包到本地。</p>
-<h5 id="主题的使用"><a href="#主题的使用" class="headerlink" title="主题的使用"></a>主题的使用</h5><p>  将下载的主题文件找到，然后整个的放进hexo安装时定义的文件夹（我的文件夹名字是blog，所以之后就用blog文件夹来指代这个）的theme中。然后更改blog中的_config.yml中的theme属性为你选择的主题的名字。然后打开hexo，输入命令<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure><br>  然后通过localhost:4000能访问到你的页面，至此，模板的套用就完成了。</p>
-<h5 id="修改模板"><a href="#修改模板" class="headerlink" title="修改模板"></a>修改模板</h5><p>  一般下载的模板都会有一个readme文件，里面都会有作者对与自己模板归纳的一些修改方法，如怎么添加标签、怎么添加分类等等。修改方法是修改theme里面，对应主题的config.yml配置文件。类似于<br>  <img src="/blog2.png" alt="模板修改"></p>
-<h5 id="新建一个页面"><a href="#新建一个页面" class="headerlink" title="新建一个页面"></a>新建一个页面</h5><p>  上面的配置做好之后，比如你点击标签，很可能弹出一个404，这分钟不要慌。因为上面的一步只是把你主页的标签和对应链接联系起来，而这时候对应链接的页面都还没有建立呢，下面就来建立链接。<br>  hexo里面有自带的新建页面和博文的命令。<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new page “name”</span><br><span class="line">hexo new title “name”</span><br></pre></td></tr></table></figure><br>  其中我理解的是page是新建页面，title是新建博文。博文很容易理解，页面用于类似归纳标签之类的，是博文之外blog内部链接。<br>  这时候再执行一次hexo的生成和服务器运行命令，通过点击就能发现，对应页面能够打开了。</p>
-<h5 id="更改主题内容"><a href="#更改主题内容" class="headerlink" title="更改主题内容"></a>更改主题内容</h5><p>  当你觉得主题作者的布局或者什么跟你的需求有出入的时候，就需要自己改配置了。我看过很多主题，大多是用ejs、less写的。也许乍一看有点蒙，但是仔细看一下就会发现，他们就是js、css的一种框架罢了。对应教程我会贴在文章的最后方。</p>
-<h5 id="需注意的点"><a href="#需注意的点" class="headerlink" title="需注意的点"></a>需注意的点</h5><p>  注意配置tags、about之类页面的时候是在主题包里面的_config.yml。然后标签的使用中，添加多个标签，格式应该是这样的。<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Tag：</span><br><span class="line">		- [A]</span><br><span class="line">		- [B]</span><br><span class="line">		- [C]</span><br></pre></td></tr></table></figure></p>
-<h4 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h4><pre><code>任何事都不会是一帆风顺，若非一马平川，暂且蹒跚而行。</code></pre><ol>
-<li><p>其实在传代码的时候，我同一个问题出现了好几次。就是在hexo中上传代码之后，本地仓库的代码没有更新，而远程仓库已经更新到前面去了。这时候如果在本地做出什么改动，然后向上传到远程仓库，就会出问题。其实解决办法也挺简单的</p>
-<ul>
-<li>通过pull把远端仓库的代码下到本地仓库，再修改，之后再上传就可以了。</li>
-<li>通过对比软件（我用的Beyond Compare 4）把本地仓库跟hexo仓库的代码同步，然后上传本地仓库到远程。而不是通过hexo直接上传。</li>
-<li>至于我在网上找能否通过hexo直接更新远程仓库的log信息，尚未找到- -哪位大侠找到了还得烦请告诉我一下，实在是饱受这东西的折磨- -</li>
-</ul>
-</li>
-<li><p>在你新建的标签文件、分类文件或者其他文件打开遇到404的时候，不要慌~检查一下type是不是写对了，检查一下”-“后面是否有空格，检查一下layout是否没有引用。其实都是小问题，细心一些，就没毛病了。</p>
-</li>
-</ol>
-<hr>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>  因为是从零开始，其实走过很多弯路，比如我在tags页面的搭建过程中，就走的很不顺利，我的tags页面老是出现的md源码，而不会自动带入layout生成静态页面。其实问题很小，只要理清楚思路想一下就明白是因为模板原因。但是因为没有经验，导致花了大半天时间在这个东西上面。<br>  而ejs和less其实相对js和css而言，是轻量级的改动，却能实现更方便的功能。如果你不熟悉它们，可能能勉强的看懂他们的意思，但是想要自己做改动…<br>  所以在这里我的建议还是，一定要先把基础的三种语言以及hexo的操作方式看一遍。而对于一些找到的资料，如果你觉得不错，请一定要细细的看他贴出来的每一段代码，因为有可能你只少了十个字符，就导致你的页面和你的想法完全不同。</p>
-<hr>
-<h4 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h4><p>  <strong>程序员如何搭建自己的个人blog</strong><a href="https://www.cnblogs.com/forezp/p/9852069.html" target="_blank" rel="noopener">https://www.cnblogs.com/forezp/p/9852069.html</a><br>    上面这位大佬讲的很细，node的安装之类的都说到了。当然我这种贫弱小菜鸡只能选择github托管博客一条路<del>~</del> </p>
-<p>  <strong>知乎-如何搭建个人独立blog高赞回答</strong>    <a href="https://www.zhihu.com/question/20463581/" target="_blank" rel="noopener">https://www.zhihu.com/question/20463581/</a></p>
-<p>  <strong>Markdown教程</strong>    <a href="https://www.runoob.com/markdown/md-tutorial.html" target="_blank" rel="noopener">https://www.runoob.com/markdown/md-tutorial.html</a></p>
-<p>  <strong>ejs教程</strong>    <a href="https://www.w3cschool.cn/weflow/weflow-ejs.html" target="_blank" rel="noopener">https://www.w3cschool.cn/weflow/weflow-ejs.html</a></p>
-<p>  <strong>less教程</strong>    <a href="https://less.bootcss.com/" target="_blank" rel="noopener">https://less.bootcss.com/</a></p>
-<p>  <strong>hexo官网</strong>    <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/</a></p>
-<p>  <strong>gitalk配置教程</strong>    <a href="https://iochen.com/2018/01/06/use-gitalk-in-hexo/" target="_blank" rel="noopener">https://iochen.com/2018/01/06/use-gitalk-in-hexo/</a></p>
-<p>  <strong>Hexo搭建教程</strong>    <a href="https://blog.csdn.net/sinat_37781304/article/details/82729029" target="_blank" rel="noopener">https://blog.csdn.net/sinat_37781304/article/details/82729029</a></p>
-<p>  <strong>hexo设置关于、标签、分类、归档</strong>    <a href="https://blog.csdn.net/ganzhilin520/article/details/79047249" target="_blank" rel="noopener">https://blog.csdn.net/ganzhilin520/article/details/79047249</a></p>
-
+        
+        <p class="article-more-link">
+            <a href="/2020/03/22/%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BAblog/#more">
+                <span class="vm">阅读更多</span>
+                <i class="icon-arrow-double-right vm"></i>    
+            </a>
+        </p>
+        
         
     </section>
 </article>
@@ -325,58 +302,17 @@
     
     <section class="article-body markdown-body">
         
-        <h4 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h4><pre><code>Git是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。在往后工作、生活、学习和交流中都会经常用到的远程仓库、版本管理系统。功能十分之强大，所以在这里稍微做个总结。</code></pre><h4 id="从零开始学git"><a href="#从零开始学git" class="headerlink" title="从零开始学git"></a>从零开始学git</h4><hr>
-<h5 id="git安装"><a href="#git安装" class="headerlink" title="git安装"></a>git安装</h5><p>  从官网下载安装包（官网地址：<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a>），下载后安装即可。<br>  <img src="/git1.png" alt="git下载"><br>  安装过程中，可以设置默认编辑器，默认使用vim，也可以自定义，点击Browse，添加第三方编辑器.exe即可。<br>  <img src="/git2.png" alt="git安装图"><br>  安装成功后，在开始菜单中找到Git文件夹，其中Git GUI为用户界面模式，Git Bash为命令行模式。<br>  由于git是分布式管理工具，使用前还需要最后一步设置，安装命令如下：<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;Your Name&quot;    &#x2F;&#x2F;设置用户名</span><br><span class="line">git config --global user.email &quot;you@example.com&quot;    &#x2F;&#x2F;设置用户邮箱</span><br><span class="line">git config --list    &#x2F;&#x2F;查看设置</span><br><span class="line">&#x2F;&#x2F;注意：git config --global 参数，有了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然你也可以对某个仓库指定的不同的用户名和邮箱。配置git的当前仓库邮箱和用户名配置有2种方式: a.直接不使用--global；b.使用--local。</span><br><span class="line">git config user.name &quot;Your Name&quot; </span><br><span class="line">git config user.email &quot;you@example.com&quot; </span><br><span class="line">git config --local  user.name &quot;Your Name&quot;  </span><br><span class="line">git config --local user.email &quot;you@example.com&quot;</span><br></pre></td></tr></table></figure><br>  <img src="/git3.png" alt="git安装图"><br>  如果使用github，还需要进行下面的配置：</p>
-<ul>
-<li>生成公钥：使用命令ssh-keygen -t rsa -C “<a href="mailto:you@example.com">you@example.com</a>“，将前面邮箱换成你注册的github邮箱，一路回车就行了。</li>
-<li>可以在用户主目录里找到.ssh目录（/c/Users/DELL/.ssh/），里面有id_rsa 和 id_rsa.pub两个文件，找到公钥id_rsa.pub，打开文件复制公钥，</li>
-<li>登陆GitHub，打开“Settings”-&gt; “Account”，“SSH Keys”页面，然后，点击“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容。</li>
-</ul>
-<h5 id="git的四个工作区"><a href="#git的四个工作区" class="headerlink" title="git的四个工作区"></a>git的四个工作区</h5><p>  <img src="/git4.png" alt="git安装图"></p>
-<ul>
-<li>Workspace：工作区，就是你平时存放项目代码的地方。</li>
-<li>Index / Stage：暂存区，用于临时存放你的改动，一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index），保存即将提交到文件列表信息；</li>
-<li>Repository：本地仓库，就是存放项目代码的位置，这里面有你提交到所有版本的数据。其中HEAD指向最新放入仓库的版本；工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。</li>
-<li>Remote：远程仓库，托管代码的服务器，可以简单的认为是你项目组中的一台电脑用于远程数据交换。</li>
-</ul>
-<h5 id="git基本命令、用法"><a href="#git基本命令、用法" class="headerlink" title="git基本命令、用法"></a>git基本命令、用法</h5><h6 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h6><ul>
-<li>创建git目录相关命令<blockquote>
-<p>cd（进入某个目录）<br>mkdir（创建文件夹）<br>pwd（查看当前所在目录）<br>ls（显示指定工作目录下的文件列表）</p>
-</blockquote>
-</li>
-<li>初始化，用git init来初始化git版本库并在当前文件夹创建一个.git文化夹。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h6 id="命令说明"><a href="#命令说明" class="headerlink" title="命令说明"></a>命令说明</h6><p>  当我要新增一个叫test.txt的测试文件到远程仓库中时，我需要用到的命令有<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">$ git add test.txt</span><br><span class="line">$ git commit</span><br><span class="line">$ git push</span><br></pre></td></tr></table></figure><br>  其中</p>
-<ul>
-<li>git status ：检查提交代码前修改了什么内容，查看当前Git目录下各文件的状态。</li>
-<li>git add：将修改的文件添加到暂存区。可以添加文件或者目录，也可以使用通配符。修改了代码，不管是增加、删除、修改文件这些操作，都是使用git add将修改的文件添加到暂存区。</li>
-<li>git commit：将暂存区文件提交到仓库，直接调用git commit会弹出编辑器，输入提交日志（如果是多行日志，建议使用）；针对单行日志提交的情况，可以使用命令：git commit -m “日志信息” 。如果已经执行了git commit命令，还有需要修改commit日志或者需要修改提交的文件，可以使用git commit –amend修改上一次commit。</li>
-<li>git push -u origin master：将本地的master分支推送到origin主机，同时指定origin为默认主机，后面就可以不加任何参数使用git push了。</li>
-<li>git remote add <name> <url>，添加远程仓库。以github为例：git remote add origin git@github.com:&lt;username&gt;/&lt;reponame&gt;.git。<br><img src="/git5.png" alt="基础命令"></li>
-</ul>
-<h6 id="修改文件"><a href="#修改文件" class="headerlink" title="修改文件"></a>修改文件</h6><p>  修改文件后，通过git status查看修改了哪些文件。如果想知道详细的修改，使用git diff。<br>  <strong>使用git add命令将修改文件添加到暂存区，再执行git commit和git push命令提交代码。如果git push出现冲突，先执行git pull命令，解决冲突后再提交代码。</strong><br>  命令说明：</p>
-<ul>
-<li>git diff [<path>…]：查看当前工作区的区别，diff对比的是当前工作区与最后一次commit提交    的代码的修改。命令参数可以指定文件目录或文件。</li>
-<li>git diff –cached或 git diff –staged：显示暂存区(已add但未commit文件)和最后一次commit(HEAD)之间的所有文件的修改，git diff –cached和git diff –staged的作用相同。</li>
-<li>git diff [<options>] <commit> <commit> [–] [<path>…]：对比两次提交的不同，commit是两次提交的版本号。</li>
-<li>git log：获得历史修改记录，常用的还可以增加–stat参数，参考具体修改了哪些文件。<br><img src="/git6.png" alt="log示例"></li>
-<li>git pull：取回远程仓库某个分支的更新，再与本地的指定分支合并。</li>
-</ul>
-<h6 id="回滚版本"><a href="#回滚版本" class="headerlink" title="回滚版本"></a>回滚版本</h6><ol>
-<li>git reset<br>修改HEAD的位置，即将HEAD指向的位置改变为之前存在的某个版本。如果想回滚到之前的某个版本，可以使用这个命令。<br><strong>如果需要撤销的代码已经push到远程仓库，执行git reset回滚代码后，需要执行git push -f强制提交到远程库，执行git push会报错。</strong><br><em>注意：在Git中，用HEAD表示当前版本，也就是最新的提交，上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写HEAD~100。</em><br>我的理解是可以当做直接回退到多少某一个版本，而那个版本之后的信息将会丢失。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git reset HEAD 文件名  &#x2F;&#x2F;移除不必要的添加到暂存区的文件</span><br><span class="line">$ git reset HEAD^ 或者 commitid &#x2F;&#x2F;回滚到上一次的提交</span><br><span class="line">$ git reset --soft  HEAD^ &#x2F;&#x2F;修改上次提交的信息,即commit -m &quot;修改这里的内容&quot;</span><br><span class="line">$ git reset --soft &#x2F;&#x2F;只是将HEAD引用指向指定的提交，撤销已提交的版本库，工作区跟暂存区的内容不会改变</span><br><span class="line">$ git reset --mixed &#x2F;&#x2F;（默认选项）将HEAD指向指定的提交，暂存区的内容随之改变，工作区内容不变</span><br><span class="line">$ git reset --hard &#x2F;&#x2F;将HEAD指向指定的提交，暂存区跟工作区都会改变</span><br></pre></td></tr></table></figure></li>
-<li>git revert<br>撤销某次提交，这次提交的commit和history都会保留，并且把这次撤销作为一次新的提交。如果只是想撤销某一次提交，又想保留这次提交后面的版本，可以使用这个命令。<br>我的理解是，通过反向对比来得到某个版本改动之前的代码，然后再将得到的代码进行一次新的提交。即之前的代码能够找到，但又回溯到了目标版本号。</li>
-</ol>
-<h4 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h4><ol>
-<li>git命令详解<br><a href="https://segmentfault.com/a/1190000015482463?utm_source=tag-newest" target="_blank" rel="noopener">https://segmentfault.com/a/1190000015482463?utm_source=tag-newest</a></li>
-<li>初学git<br><a href="https://www.cnblogs.com/chris0710/p/8925977.html" target="_blank" rel="noopener">https://www.cnblogs.com/chris0710/p/8925977.html</a></li>
-<li>廖雪峰老师的git教程，可以详细了解git的由来，功能等等，适合有时间的时候慢慢看一下。<br><a href="https://www.liaoxuefeng.com/wiki/896043488029600/896202815778784" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/896043488029600/896202815778784</a></li>
-<li>windows下的git安装和使用<br><a href="https://blog.csdn.net/qq_37838568/article/details/81052370" target="_blank" rel="noopener">https://blog.csdn.net/qq_37838568/article/details/81052370</a></li>
-<li>下载并安装git，参考:<br><a href="https://blog.csdn.net/qq_37838568/article/details/81052370" target="_blank" rel="noopener">https://blog.csdn.net/qq_37838568/article/details/81052370</a></li>
-<li>安装完了之后注册并登陆github，初始化git配置，参考资料:<br><a href="https://blog.csdn.net/qq_37838568/article/details/81053055" target="_blank" rel="noopener">https://blog.csdn.net/qq_37838568/article/details/81053055</a></li>
-</ol>
-
+        <h4 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h4><pre><code>Git是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。
+在往后工作、生活、学习和交流中都会经常用到，功能强大，在这里稍微做个总结。</code></pre><h4 id="从零开始学git"><a href="#从零开始学git" class="headerlink" title="从零开始学git"></a>从零开始学git</h4><hr>
+<h5 id="git安装"><a href="#git安装" class="headerlink" title="git安装"></a>git安装</h5><p>  从官网下载安装包（官网地址：<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a>），下载后安装即可。<br>  <img src="/git1.png" alt="git下载"><br>  安装过程中，可以设置默认编辑器，默认使用vim，也可以自定义，点击Browse，添加第三方编辑器.exe即可。<br>  <img src="/git2.png" alt="git安装图"><br>  安装成功后，在开始菜单中找到Git文件夹，其中Git GUI为用户界面模式，Git Bash为命令行模式。<br>  由于git是分布式管理工具，使用前还需要最后一步设置，安装命令如下：<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;Your Name&quot;    &#x2F;&#x2F;设置用户名</span><br><span class="line">git config --global user.email &quot;you@example.com&quot;    &#x2F;&#x2F;设置用户邮箱</span><br><span class="line">git config --list    &#x2F;&#x2F;查看设置</span><br><span class="line">&#x2F;&#x2F;git config --global 参数，有了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然你也可以对某个仓库指定的不同的用户名和邮箱。</span><br><span class="line">&#x2F;&#x2F;配置git的当前仓库邮箱和用户名配置有2种方式: a.直接不使用--global；b.使用--local。</span><br><span class="line">git config user.name &quot;Your Name&quot; </span><br><span class="line">git config user.email &quot;you@example.com&quot; </span><br><span class="line">git config --local  user.name &quot;Your Name&quot;  </span><br><span class="line">git config --local user.email &quot;you@example.com&quot;</span><br></pre></td></tr></table></figure></p>
+        
+        <p class="article-more-link">
+            <a href="/2020/03/22/Git%E7%9A%84%E4%BD%BF%E7%94%A8/#more">
+                <span class="vm">阅读更多</span>
+                <i class="icon-arrow-double-right vm"></i>    
+            </a>
+        </p>
+        
         
     </section>
 </article>

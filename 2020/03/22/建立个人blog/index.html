@@ -10,7 +10,7 @@
     <title>建立个人blog | Travelling</title>
     <meta name="author" content="Travelling" />
     <meta name="keywords" content="" />
-    <meta name="description" content="写在开头：我的个人blog的搭建，多亏了网上各路神仙大佬的帖子、blog和问答。介于借鉴、学习、拜读过的文章太多，就不一一列出，烦请谅解。准备工作  建立自己的github个人主页，参考我的  Git个人主页的建立  Git使用那么现在开始吧。域名注册  选一个你喜欢的服务商（如阿里云、腾讯云、天翼云等等），然后想一个域名名字，查询这个域名是否已经有人买下了。如我是在阿里云里买的域名：programape.top。域名和主页的联系  域名买下之后就是把个人主页和域名联系起来。方法..." />
+    <meta name="description" content="写在开头：我的个人blog的搭建，多亏了网上各路神仙大佬的帖子、blog和问答。介于借鉴、学习、拜读过的文章太多，就不一一列出，烦请谅解。准备工作  建立自己的github个人主页，参考我的  Git个人主页的建立  Git使用那么现在开始吧。域名注册  选一个你喜欢的服务商（如阿里云、腾讯云、天翼云等等），然后想一个域名名字，查询这个域名是否已经有人买下了。如我是在阿里云里买的域名：programape.top。域名和主页的联系  域名买下之后就是把个人主页和域名联系起来。方..." />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
 
@@ -137,6 +137,7 @@
 <h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><p>  建立自己的github个人主页，参考我的<br>  <a href="/2020/03/22/Git个人主页的建立/">Git个人主页的建立</a><br>  <a href="/2020/03/22/Git的使用/">Git使用</a></p>
 <hr>
 <h4 id="那么现在开始吧。"><a href="#那么现在开始吧。" class="headerlink" title="那么现在开始吧。"></a>那么现在开始吧。</h4><h5 id="域名注册"><a href="#域名注册" class="headerlink" title="域名注册"></a>域名注册</h5><p>  选一个你喜欢的服务商（如阿里云、腾讯云、天翼云等等），然后想一个域名名字，查询这个域名是否已经有人买下了。如我是在阿里云里买的域名：programape.top。</p>
+<a id="more"></a>
 <h5 id="域名和主页的联系"><a href="#域名和主页的联系" class="headerlink" title="域名和主页的联系"></a>域名和主页的联系</h5><p>  域名买下之后就是把个人主页和域名联系起来。方法是在域名管理里会有一个解析，如下图<br>  <img src="/blog1.png" alt="域名的解析"><br>  在解析里面添加两条记录<br>  记录类型选择CNAME，主机记录为 “@”和“www”，记录值为你的主页页面。然后再在git主页的仓库中添加一个CNAME文件，内容为你的域名，如我的就是“<a href="http://www.programape.top”" target="_blank" rel="noopener">www.programape.top”</a><br>  这样你访问域名的时候就会解析为对应主页的页面了。</p>
 <h5 id="主题的选择"><a href="#主题的选择" class="headerlink" title="主题的选择"></a>主题的选择</h5><p>  接下来就该开始选blog主题了。网上有很多相关的教程，我看了很多资料，最后选择了hexo，它是一种快速高效的blog框架。进入hexo主页，跟着内容安装hexo，然后就是选择一个你觉得不错的模板。因为hexo上的模板都是放在git上的，所以需要用git将你选中的模板clone到本地，或者直接下载压缩包到本地。</p>
 <h5 id="主题的使用"><a href="#主题的使用" class="headerlink" title="主题的使用"></a>主题的使用</h5><p>  将下载的主题文件找到，然后整个的放进hexo安装时定义的文件夹（我的文件夹名字是blog，所以之后就用blog文件夹来指代这个）的theme中。然后更改blog中的_config.yml中的theme属性为你选择的主题的名字。然后打开hexo，输入命令<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure><br>  然后通过localhost:4000能访问到你的页面，至此，模板的套用就完成了。</p>
