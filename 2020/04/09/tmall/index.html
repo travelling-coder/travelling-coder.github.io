@@ -149,6 +149,8 @@
 <li>订单页面。因为思路跟购物车一样，pass。</li>
 <li>数据库的问题。我是通过sessionStorage和localStorage回避了问题，但是很不安全。</li>
 <li>评论的随机展示。思路是随机生成评论数的评论内容，并展示在一个table中，然后为table布局。固定套路，pass。</li>
+<li>在购物车界面，当所有物品都通过input和button改变数量时，再移除其中一个物品，因为没更新sessionstorage会导致其他物品的购买数量回到改变之前的状态。</li>
+<li>在购物车界面，页面加载时图片处理的问题。想法是通过ajax或者缩略图或者渲染dom的时候就将不需要的dom隐藏来解决图片加载慢和图片闪现的问题。</li>
 </ol>
 <h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><ol>
 <li>v-model在template中无法绑定数据。如我在goods.html中绑定checkbox的value时无法达成。</li>
