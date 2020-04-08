@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+
+    
+
+    
+
+    <title>建立个人blog | Travelling</title>
+    <meta name="author" content="Travelling" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="写在开头：我的个人blog的搭建，多亏了网上各路神仙大佬的帖子、blog和问答。介于借鉴、学习、拜读过的文章太多，就不一一列出，烦请谅解。准备工作  建立自己的github个人主页，参考我的  Git个人主页的建立  Git使用那么现在开始吧。域名注册  选一个你喜欢的服务商（如阿里云、腾讯云、天翼云等等），然后想一个域名名字，查询这个域名是否已经有人买下了。如我是在阿里云里买的域名：programape.top。域名和主页的联系  域名买下之后就是把个人主页和域名联系起来。方..." />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+
+    
+    <link rel="alternate" href="/atom.xml" title="Travelling" type="application/atom+xml">
+    
+    
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'icomoon';
+        src: url("/fonts/icomoon.eot?q628ml");
+        src: url("/fonts/icomoon.eot?q628ml#iefix") format('embedded-opentype'),
+             url("/fonts/icomoon.ttf?q628ml") format('truetype'),
+             url("/fonts/icomoon.woff?q628ml") format('woff'),
+             url("/fonts/icomoon.svg?q628ml#icomoon") format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+    </style>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!--[if lt IE 9]>
+    <style type="text/css">
+    .nav-inner {top:0;}
+    .author-meta {position:static;top:0;}
+    .search-form {height:36px;}
+    </style>
+    <script type="text/javascript" src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <![endif]-->
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+
+    <main class="app">
+        <header id="header" class="header clearfix">
+    <div id="nav" class="nav">
+    <div class="nav-mobile">
+        <button id="open-panel" class="open-panel nav-mobile-item"><i class="icon-documents"></i></button>
+        <h1 class="nav-mobile-title nav-mobile-item">Travelling</h1>
+        <button id="open-menus" class="open-panel nav-mobile-item"><i class="icon-library"></i></button>
+    </div>
+
+    <nav id="nav-inner" class="nav-inner">
+        
+            <a class="nav-item" href="/">
+                <span class="nav-text">首页</span>
+            </a>
+        
+            <a class="nav-item" href="/archives">
+                <span class="nav-text">归档</span>
+            </a>
+        
+            <a class="nav-item" href="/tags/">
+                <span class="nav-text">标签</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/demo/">
+                <span class="nav-text">demo</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/doc/">
+                <span class="nav-text">doc</span>
+            </a>
+        
+            <a class="nav-item" href="/about">
+                <span class="nav-text">关于</span>
+            </a>
+        
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <!-- <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="www.programape.top"></form> -->
+
+        
+        
+        
+        
+
+        
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#写在开头："><span class="toc-number">1.</span> <span class="toc-text">写在开头：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#准备工作"><span class="toc-number">2.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#那么现在开始吧。"><span class="toc-number">3.</span> <span class="toc-text">那么现在开始吧。</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#域名注册"><span class="toc-number">3.1.</span> <span class="toc-text">域名注册</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#域名和主页的联系"><span class="toc-number">3.2.</span> <span class="toc-text">域名和主页的联系</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#主题的选择"><span class="toc-number">3.3.</span> <span class="toc-text">主题的选择</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#主题的使用"><span class="toc-number">3.4.</span> <span class="toc-text">主题的使用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#修改模板"><span class="toc-number">3.5.</span> <span class="toc-text">修改模板</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#新建一个页面"><span class="toc-number">3.6.</span> <span class="toc-text">新建一个页面</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#更改主题内容"><span class="toc-number">3.7.</span> <span class="toc-text">更改主题内容</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#需注意的点"><span class="toc-number">3.8.</span> <span class="toc-text">需注意的点</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#遇到的问题"><span class="toc-number">4.</span> <span class="toc-text">遇到的问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参考："><span class="toc-number">6.</span> <span class="toc-text">参考：</span></a></li></ol>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content">
+            <div id="wrapper" class="wrapper" style="max-width: 800px">
+                <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            建立个人blog
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="www.programape.top/2020/02/24/%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BAblog/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2020-02-24T08:17:19.000Z" itemprop="datePublished">2020-02-24</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/blog/" rel="tag">blog</a>, <a class="article-tag-link" href="/tags/git/" rel="tag">git</a>, <a class="article-tag-link" href="/tags/hexo/" rel="tag">hexo</a>, <a class="article-tag-link" href="/tags/theme/" rel="tag">theme</a>, <a class="article-tag-link" href="/tags/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B/" rel="tag">从零开始</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h4 id="写在开头："><a href="#写在开头：" class="headerlink" title="写在开头："></a>写在开头：</h4><pre><code>我的个人blog的搭建，多亏了网上各路神仙大佬的帖子、blog和问答。
+介于借鉴、学习、拜读过的文章太多，就不一一列出，烦请谅解。</code></pre><hr>
+<h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><p>  建立自己的github个人主页，参考我的<br>  <a href="/2020/03/22/Git个人主页的建立/">Git个人主页的建立</a><br>  <a href="/2020/03/22/Git的使用/">Git使用</a></p>
+<hr>
+<h4 id="那么现在开始吧。"><a href="#那么现在开始吧。" class="headerlink" title="那么现在开始吧。"></a>那么现在开始吧。</h4><h5 id="域名注册"><a href="#域名注册" class="headerlink" title="域名注册"></a>域名注册</h5><p>  选一个你喜欢的服务商（如阿里云、腾讯云、天翼云等等），然后想一个域名名字，查询这个域名是否已经有人买下了。如我是在阿里云里买的域名：programape.top。</p>
+<a id="more"></a>
+<h5 id="域名和主页的联系"><a href="#域名和主页的联系" class="headerlink" title="域名和主页的联系"></a>域名和主页的联系</h5><p>  域名买下之后就是把个人主页和域名联系起来。方法是在域名管理里会有一个解析，如下图<br>  <img src="/blog1.png" alt="域名的解析"><br>  在解析里面添加两条记录<br>  记录类型选择CNAME，主机记录为 “@”和“www”，记录值为你的主页页面。然后再在git主页的仓库中添加一个CNAME文件，内容为你的域名，如我的就是“<a href="http://www.programape.top”" target="_blank" rel="noopener">www.programape.top”</a><br>  这样你访问域名的时候就会解析为对应主页的页面了。</p>
+<h5 id="主题的选择"><a href="#主题的选择" class="headerlink" title="主题的选择"></a>主题的选择</h5><p>  接下来就该开始选blog主题了。网上有很多相关的教程，我看了很多资料，最后选择了hexo，它是一种快速高效的blog框架。进入hexo主页，跟着内容安装hexo，然后就是选择一个你觉得不错的模板。因为hexo上的模板都是放在git上的，所以需要用git将你选中的模板clone到本地，或者直接下载压缩包到本地。</p>
+<h5 id="主题的使用"><a href="#主题的使用" class="headerlink" title="主题的使用"></a>主题的使用</h5><p>  将下载的主题文件找到，然后整个的放进hexo安装时定义的文件夹（我的文件夹名字是blog，所以之后就用blog文件夹来指代这个）的theme中。然后更改blog中的_config.yml中的theme属性为你选择的主题的名字。然后打开hexo，输入命令<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure><br>  然后通过localhost:4000能访问到你的页面，至此，模板的套用就完成了。</p>
+<h5 id="修改模板"><a href="#修改模板" class="headerlink" title="修改模板"></a>修改模板</h5><p>  一般下载的模板都会有一个readme文件，里面都会有作者对与自己模板归纳的一些修改方法，如怎么添加标签、怎么添加分类等等。修改方法是修改theme里面，对应主题的config.yml配置文件。类似于<br>  <img src="/blog2.png" alt="模板修改"></p>
+<h5 id="新建一个页面"><a href="#新建一个页面" class="headerlink" title="新建一个页面"></a>新建一个页面</h5><p>  上面的配置做好之后，比如你点击标签，很可能弹出一个404，这分钟不要慌。因为上面的一步只是把你主页的标签和对应链接联系起来，而这时候对应链接的页面都还没有建立呢，下面就来建立链接。<br>  hexo里面有自带的新建页面和博文的命令。<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new page “name”</span><br><span class="line">hexo new title “name”</span><br></pre></td></tr></table></figure><br>  其中我理解的是page是新建页面，title是新建博文。博文很容易理解，页面用于类似归纳标签之类的，是博文之外blog内部链接。<br>  这时候再执行一次hexo的生成和服务器运行命令，通过点击就能发现，对应页面能够打开了。</p>
+<h5 id="更改主题内容"><a href="#更改主题内容" class="headerlink" title="更改主题内容"></a>更改主题内容</h5><p>  当你觉得主题作者的布局或者什么跟你的需求有出入的时候，就需要自己改配置了。我看过很多主题，大多是用ejs、less写的。也许乍一看有点蒙，但是仔细看一下就会发现，他们就是js、css的一种框架罢了。对应教程我会贴在文章的最后方。</p>
+<h5 id="需注意的点"><a href="#需注意的点" class="headerlink" title="需注意的点"></a>需注意的点</h5><p>  注意配置tags、about之类页面的时候是在主题包里面的_config.yml。然后标签的使用中，添加多个标签，格式应该是这样的。<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Tag：</span><br><span class="line">		- [A]</span><br><span class="line">		- [B]</span><br><span class="line">		- [C]</span><br></pre></td></tr></table></figure></p>
+<h4 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h4><pre><code>任何事都不会是一帆风顺，若非一马平川，暂且蹒跚而行。</code></pre><ol>
+<li><p>其实在传代码的时候，我同一个问题出现了好几次。就是在hexo中上传代码之后，本地仓库的代码没有更新，而远程仓库已经更新到前面去了。这时候如果在本地做出什么改动，然后向上传到远程仓库，就会出问题。其实解决办法也挺简单的</p>
+<ul>
+<li>通过pull把远端仓库的代码下到本地仓库，再修改，之后再上传就可以了。</li>
+<li>通过对比软件（我用的Beyond Compare 4）把本地仓库跟hexo仓库的代码同步，然后上传本地仓库到远程。而不是通过hexo直接上传。</li>
+<li>至于我在网上找能否通过hexo直接更新远程仓库的log信息，尚未找到- -哪位大侠找到了还得烦请告诉我一下，实在是饱受这东西的折磨- -</li>
+</ul>
+</li>
+<li><p>在你新建的标签文件、分类文件或者其他文件打开遇到404的时候，不要慌~检查一下type是不是写对了，检查一下”-“后面是否有空格，检查一下layout是否没有引用。其实都是小问题，细心一些，就没毛病了。</p>
+</li>
+</ol>
+<hr>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>  因为是从零开始，其实走过很多弯路，比如我在tags页面的搭建过程中，就走的很不顺利，我的tags页面老是出现的md源码，而不会自动带入layout生成静态页面。其实问题很小，只要理清楚思路想一下就明白是因为模板原因。但是因为没有经验，导致花了大半天时间在这个东西上面。<br>  而ejs和less其实相对js和css而言，是轻量级的改动，却能实现更方便的功能。如果你不熟悉它们，可能能勉强的看懂他们的意思，但是想要自己做改动…<br>  所以在这里我的建议还是，一定要先把基础的三种语言以及hexo的操作方式看一遍。而对于一些找到的资料，如果你觉得不错，请一定要细细的看他贴出来的每一段代码，因为有可能你只少了十个字符，就导致你的页面和你的想法完全不同。</p>
+<hr>
+<h4 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h4><p>  <strong>程序员如何搭建自己的个人blog</strong><a href="https://www.cnblogs.com/forezp/p/9852069.html" target="_blank" rel="noopener">https://www.cnblogs.com/forezp/p/9852069.html</a><br>    上面这位大佬讲的很细，node的安装之类的都说到了。当然我这种贫弱小菜鸡只能选择github托管博客一条路<del>~</del> </p>
+<p>  <strong>知乎-如何搭建个人独立blog高赞回答</strong>    <a href="https://www.zhihu.com/question/20463581/" target="_blank" rel="noopener">https://www.zhihu.com/question/20463581/</a></p>
+<p>  <strong>Markdown教程</strong>    <a href="https://www.runoob.com/markdown/md-tutorial.html" target="_blank" rel="noopener">https://www.runoob.com/markdown/md-tutorial.html</a></p>
+<p>  <strong>ejs教程</strong>    <a href="https://www.w3cschool.cn/weflow/weflow-ejs.html" target="_blank" rel="noopener">https://www.w3cschool.cn/weflow/weflow-ejs.html</a></p>
+<p>  <strong>less教程</strong>    <a href="https://less.bootcss.com/" target="_blank" rel="noopener">https://less.bootcss.com/</a></p>
+<p>  <strong>hexo官网</strong>    <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/</a></p>
+<p>  <strong>gitalk配置教程</strong>    <a href="https://iochen.com/2018/01/06/use-gitalk-in-hexo/" target="_blank" rel="noopener">https://iochen.com/2018/01/06/use-gitalk-in-hexo/</a></p>
+<p>  <strong>Hexo搭建教程</strong>    <a href="https://blog.csdn.net/sinat_37781304/article/details/82729029" target="_blank" rel="noopener">https://blog.csdn.net/sinat_37781304/article/details/82729029</a></p>
+<p>  <strong>hexo设置关于、标签、分类、归档</strong>    <a href="https://blog.csdn.net/ganzhilin520/article/details/79047249" target="_blank" rel="noopener">https://blog.csdn.net/ganzhilin520/article/details/79047249</a></p>
+
+        
+    </section>
+</article>
+
+
+
+<a id="pagenext" href="/2020/02/24/Git%E4%B8%AA%E4%BA%BA%E4%B8%BB%E9%A1%B5%E7%9A%84%E5%BB%BA%E7%AB%8B/" class="article-next" title="Git个人主页的建立"><i class="icon-arrow-right"></i></a>
+
+
+<a id="pageprev" href="/2020/03/12/market/" class="article-prev" title="仓库管理系统"><i class="icon-arrow-left"></i></a>
+
+
+
+<div class="comments">
+    <div id="comments"></div>
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+    new Gitalk({
+        clientID: "e190f11846edf6d4039b",
+        clientSecret: "01264c9dcb3d01120050f1536accb08187e01cc3",
+        repo: "travelling-coder.github.io",
+        owner: "travelling-coder",
+        admin: ["travelling-coder"],
+        id: "2020/02/24/建立个人blog",
+        distractionFreeMode: true,
+        title: "建立个人blog",
+        body: "www.programape.top/2020/02/24/%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BAblog/",
+        labels: ["git","从零开始","hexo","blog","theme"]
+    }).render('comments');
+    </script>
+</div>
+
+
+            </div>
+        </div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+
+    
+</footer>
+
+    </main>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var nodes = {
+            nav: $('#nav'),
+            aside: $('#aside'),
+            asideInner: $('#aside-inner'),
+            navInner: $('#nav-inner')
+        };
+
+        var doing = false;
+        nodes.asideInner.on('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function() {
+            if (nodes.aside.hasClass('mobile-open')) {
+                nodes.aside.removeClass('mobile-open');
+            } else {
+                nodes.aside.removeClass('mobile-close panel-show');
+            }
+            doing = false;
+        });
+        $('#open-panel, #aside-mask').on('click', function() {
+            if (doing) {
+                return;
+            }
+
+            if (nodes.aside.hasClass('panel-show')) {
+                nodes.aside.addClass('mobile-close');
+            } else {
+                nodes.aside.addClass('mobile-open panel-show');
+            }
+        });
+        $('#open-menus').on('click', function() {
+            nodes.navInner.slideToggle();
+        });
+
+        if (window.innerWidth <= 960) {
+            setTimeout(function() {
+                nodes.navInner.slideUp();
+            }, 3000);
+        }
+    });
+    </script>
+    
+        
+<script src="/js/scrollspy.min.js"></script>
+
+        <script type="text/javascript">
+        $(document.body).scrollspy({target: '#aside-inner'});
+
+        $(window).on('resize', function() {
+            var hw = $('#header').width();
+            var ww = $('#wrapper').width();
+            var space = ($(this).width() - hw - ww) / 2 / 2;
+
+            var pageprev = $('#pageprev');
+            var pagenext = $('#pagenext');
+            var avg = (pageprev.width() + pagenext.width()) / 2
+
+            if(space > avg) {
+                var len = space - avg / 2;
+                var styles = {position: 'fixed', top: '50%', marginTop: - (pageprev.width() + pagenext.width()) / 4}
+                pageprev.css($.extend({left: len + avg}, styles));
+                pagenext.css($.extend({right: len}, styles));
+            } else {
+                pageprev.removeAttr('style');
+                pagenext.removeAttr('style');
+            }
+        }).trigger('resize');
+        </script>
+    
+
+</body>
+</html>

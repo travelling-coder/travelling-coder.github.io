@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+
+    
+
+    
+
+    <title>vue小结一 | Travelling</title>
+    <meta name="author" content="Travelling" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="写在前面好记性不如烂笔头！正文vue实例  其实vue可以看成一个全面的构造函数，所以新建一个vue实例的时候需要  1234567   var str2 = &#34;stringTest&#34;;var vm = new Vue(&amp;#123;	el: &#34;#test&#34;,	data: &amp;#123;		str = str2 //=&amp;gt;此处将str2的值赋予vm实例的str数据。	&amp;#125;&amp;#125;)  在这段代码中，vm是一个vue实例。el是一个选择器，选中的dom节点可以使用vue的后续功能..." />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+
+    
+    <link rel="alternate" href="/atom.xml" title="Travelling" type="application/atom+xml">
+    
+    
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'icomoon';
+        src: url("/fonts/icomoon.eot?q628ml");
+        src: url("/fonts/icomoon.eot?q628ml#iefix") format('embedded-opentype'),
+             url("/fonts/icomoon.ttf?q628ml") format('truetype'),
+             url("/fonts/icomoon.woff?q628ml") format('woff'),
+             url("/fonts/icomoon.svg?q628ml#icomoon") format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+    </style>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!--[if lt IE 9]>
+    <style type="text/css">
+    .nav-inner {top:0;}
+    .author-meta {position:static;top:0;}
+    .search-form {height:36px;}
+    </style>
+    <script type="text/javascript" src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <![endif]-->
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+
+    <main class="app">
+        <header id="header" class="header clearfix">
+    <div id="nav" class="nav">
+    <div class="nav-mobile">
+        <button id="open-panel" class="open-panel nav-mobile-item"><i class="icon-documents"></i></button>
+        <h1 class="nav-mobile-title nav-mobile-item">Travelling</h1>
+        <button id="open-menus" class="open-panel nav-mobile-item"><i class="icon-library"></i></button>
+    </div>
+
+    <nav id="nav-inner" class="nav-inner">
+        
+            <a class="nav-item" href="/">
+                <span class="nav-text">首页</span>
+            </a>
+        
+            <a class="nav-item" href="/archives">
+                <span class="nav-text">归档</span>
+            </a>
+        
+            <a class="nav-item" href="/tags/">
+                <span class="nav-text">标签</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/demo/">
+                <span class="nav-text">demo</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/doc/">
+                <span class="nav-text">doc</span>
+            </a>
+        
+            <a class="nav-item" href="/about">
+                <span class="nav-text">关于</span>
+            </a>
+        
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <!-- <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="www.programape.top"></form> -->
+
+        
+        
+        
+        
+
+        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#写在前面"><span class="toc-number">1.</span> <span class="toc-text">写在前面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正文"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vue实例"><span class="toc-number">2.1.</span> <span class="toc-text">vue实例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#v-bind"><span class="toc-number">2.2.</span> <span class="toc-text">v-bind</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#v-on"><span class="toc-number">2.3.</span> <span class="toc-text">v-on</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#v-for"><span class="toc-number">2.4.</span> <span class="toc-text">v-for</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#v-model"><span class="toc-number">2.5.</span> <span class="toc-text">v-model</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content">
+            <div id="wrapper" class="wrapper" style="max-width: 800px">
+                <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            vue小结一
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="www.programape.top/2020/04/09/vue%E5%B0%8F%E7%BB%93%E4%B8%80/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2020-04-08T18:12:13.000Z" itemprop="datePublished">2020-04-09</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/vue/" rel="tag">vue</a>, <a class="article-tag-link" href="/tags/vue%E5%B0%8F%E7%BB%93/" rel="tag">vue小结</a>, <a class="article-tag-link" href="/tags/%E6%96%87%E7%AB%A0/" rel="tag">文章</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><pre><code>好记性不如烂笔头！</code></pre><h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><h4 id="vue实例"><a href="#vue实例" class="headerlink" title="vue实例"></a>vue实例</h4><p>  其实vue可以看成一个全面的构造函数，所以新建一个vue实例的时候需要<br>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">var</span> str2 = <span class="string">"stringTest"</span>;</span><br><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">	el: <span class="string">"#test"</span>,</span><br><span class="line">	data: &#123;</span><br><span class="line">		str = str2 <span class="comment">//=&gt;此处将str2的值赋予vm实例的str数据。</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><br>  在这段代码中，vm是一个vue实例。el是一个选择器，选中的dom节点可以使用vue的后续功能：如模板、计算属性等。而data则是定义在这个选中的dom节点后续的vue操作中可以使用的数据。</p>
+<h4 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h4><p>  v-bind可缩写为“:”，可以使用在模板语法中，如当我们需要输出一个字符串时，可以这样写。<br>  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span> = <span class="string">"test"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;str&#125;&#125;<span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- =&gt;stringTest，即输出vm实例的str数据 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>  也可以用在模板语法中使用v-bind。<br>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'test-box'</span>,&#123;</span><br><span class="line">	props: [<span class="string">"inf"</span>],	<span class="comment">//此处相当于给test-box组件定义一个属性，类似于input与value之间的关系</span></span><br><span class="line">	template: <span class="string">`</span></span><br><span class="line"><span class="string">		&lt;p&gt;&#123;&#123;inf&#125;&#125;&lt;/p&gt;</span></span><br><span class="line"><span class="string">	`</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><br>  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span> = <span class="string">"test"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">test-box</span> <span class="attr">:inf</span> = <span class="string">"str"</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- =&gt;stringTest，意味将vm实例的str属性动态绑定到test-box的inf属性上，而上一段代码使得test-box中会有一个p元素，内容为inf的值 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">test-box</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><br>  这里你也许会觉得模板语法更复杂了呀，那是暂时还没有使用v-for，也没有复用模板。试想当一个模板有200行代码，而你做好模板之后，只需要一行代码就相当于写了200行模板代码，就知道他的重要性了。</p>
+<h4 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h4><p>  v-on 可缩写为”@”，用于在模板或者vue实例中的事件处理。也可以自定义事件。典型例子如<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button @click&#x3D; &quot;alert(&quot;1&quot;)&quot;&gt;&lt;&#x2F;button&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h4><p>  v-for 很强大的一个功能，如当你实例的数据是一个数组时，通过v-for可以便捷的遍历你的数组。而在这过程中，你可以做很多事情，如对数组的每一个元素套用一种模板。<br>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'test-box'</span>,&#123;</span><br><span class="line">	props: [<span class="string">"inf"</span>],</span><br><span class="line">	template: <span class="string">`</span></span><br><span class="line"><span class="string">		&lt;p&gt;&#123;&#123;inf&#125;&#125;&lt;/p&gt;</span></span><br><span class="line"><span class="string">	`</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">var</span> arr2 = [<span class="string">"1"</span>,<span class="string">"2"</span>];</span><br><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">	el: <span class="string">"#test"</span>,</span><br><span class="line">	data: &#123;</span><br><span class="line">		arr = arr2</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><br>  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span> = <span class="string">"test"</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;<span class="name">test-box</span> </span></span><br><span class="line"><span class="tag"><span class="attr">v-for</span>= <span class="string">"arrinf in arr"</span></span></span><br><span class="line"><span class="tag"><span class="attr">:inf</span> = <span class="string">"arrinf"</span>&gt;</span></span><br><span class="line">  	<span class="comment">&lt;!-- 意味将vm实例的arr遍历，并将每个属性绑定到test-box的inf属性上，而上一段代码使得test-box中会有一个p元素，内容为inf的值 --&gt;</span></span><br><span class="line">  	<span class="tag">&lt;/<span class="name">test-box</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><br>  当然v-for也可以在template中使用，不过传递的数据就必须是完整的数组或对象。</p>
+<h4 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h4><p>  v-model 很重要的一个作用就是绑定表单元素，大部分表单元素绑定的都是value。只有checkbox绑定对象为数组时，绑定checkbox的value；绑定对象为布朗值的时候，绑定checkbox的checked。<br>  马上三点，后续还会整理，第一篇小结就先到这里。</p>
+
+        
+    </section>
+</article>
+
+
+
+<a id="pagenext" href="/2020/04/09/tmall/" class="article-next" title="天猫首页"><i class="icon-arrow-right"></i></a>
+
+
+
+
+<div class="comments">
+    <div id="comments"></div>
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+    new Gitalk({
+        clientID: "e190f11846edf6d4039b",
+        clientSecret: "01264c9dcb3d01120050f1536accb08187e01cc3",
+        repo: "travelling-coder.github.io",
+        owner: "travelling-coder",
+        admin: ["travelling-coder"],
+        id: "2020/04/09/vue小结一",
+        distractionFreeMode: true,
+        title: "vue小结一",
+        body: "www.programape.top/2020/04/09/vue%E5%B0%8F%E7%BB%93%E4%B8%80/",
+        labels: ["文章","vue","vue小结"]
+    }).render('comments');
+    </script>
+</div>
+
+
+            </div>
+        </div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+
+    
+</footer>
+
+    </main>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var nodes = {
+            nav: $('#nav'),
+            aside: $('#aside'),
+            asideInner: $('#aside-inner'),
+            navInner: $('#nav-inner')
+        };
+
+        var doing = false;
+        nodes.asideInner.on('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function() {
+            if (nodes.aside.hasClass('mobile-open')) {
+                nodes.aside.removeClass('mobile-open');
+            } else {
+                nodes.aside.removeClass('mobile-close panel-show');
+            }
+            doing = false;
+        });
+        $('#open-panel, #aside-mask').on('click', function() {
+            if (doing) {
+                return;
+            }
+
+            if (nodes.aside.hasClass('panel-show')) {
+                nodes.aside.addClass('mobile-close');
+            } else {
+                nodes.aside.addClass('mobile-open panel-show');
+            }
+        });
+        $('#open-menus').on('click', function() {
+            nodes.navInner.slideToggle();
+        });
+
+        if (window.innerWidth <= 960) {
+            setTimeout(function() {
+                nodes.navInner.slideUp();
+            }, 3000);
+        }
+    });
+    </script>
+    
+        
+<script src="/js/scrollspy.min.js"></script>
+
+        <script type="text/javascript">
+        $(document.body).scrollspy({target: '#aside-inner'});
+
+        $(window).on('resize', function() {
+            var hw = $('#header').width();
+            var ww = $('#wrapper').width();
+            var space = ($(this).width() - hw - ww) / 2 / 2;
+
+            var pageprev = $('#pageprev');
+            var pagenext = $('#pagenext');
+            var avg = (pageprev.width() + pagenext.width()) / 2
+
+            if(space > avg) {
+                var len = space - avg / 2;
+                var styles = {position: 'fixed', top: '50%', marginTop: - (pageprev.width() + pagenext.width()) / 4}
+                pageprev.css($.extend({left: len + avg}, styles));
+                pagenext.css($.extend({right: len}, styles));
+            } else {
+                pageprev.removeAttr('style');
+                pagenext.removeAttr('style');
+            }
+        }).trigger('resize');
+        </script>
+    
+
+</body>
+</html>

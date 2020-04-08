@@ -141,7 +141,7 @@
     <header class="article-header">
         
         <h1 itemprop="name">
-            <a href="/2020/03/19/market/">仓库管理系统</a>
+            <a href="/2020/04/09/tmall/">天猫首页</a>
         </h1>
         
         <div class="article-meta clearfix">
@@ -149,13 +149,13 @@
     
     <i class="icon-calendar"></i>
     
-    <time datetime="2020-03-19T07:42:45.000Z" itemprop="datePublished">2020-03-19</time>
+    <time datetime="2020-04-08T16:43:06.000Z" itemprop="datePublished">2020-04-09</time>
 </a>
 
             
 <div class="article-tag-list">
     <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/SVG/" rel="tag">SVG</a>, <a class="article-tag-link" href="/tags/canvas/" rel="tag">canvas</a>, <a class="article-tag-link" href="/tags/hash/" rel="tag">hash</a>, <a class="article-tag-link" href="/tags/localStorage/" rel="tag">localStorage</a>
+    <a class="article-tag-link" href="/tags/jQuery/" rel="tag">jQuery</a>, <a class="article-tag-link" href="/tags/vue/" rel="tag">vue</a>, <a class="article-tag-link" href="/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/" rel="tag">可视化</a>
 </div>
 
 
@@ -164,14 +164,19 @@
     
     <section class="article-body markdown-body">
         
-        <h4 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h4><pre><code>本例使用SVG和canvas两种图形工具，根据点击事件和选择生成图形。效果图如下</code></pre>
-<img src = "/market/img/market.png" width = "800px" height = "800px">
-
-<p>↓↓末尾可以进入demo↓↓</p>
-<hr>
+        <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><pre><code>在实践中熟悉dom、bom、vue、jquery等方面。
+很遗憾的是没有后台数据库，只能取巧的使用了sessionStorage和localStorage完成数据的储存和传输。</code></pre><h3 id="实例链接"><a href="#实例链接" class="headerlink" title="实例链接"></a>实例链接</h3><p><a href="/tmall/newTmall.html">我模拟的天猫首页</a></p>
+<h4 id="功能实现"><a href="#功能实现" class="headerlink" title="功能实现"></a>功能实现</h4><ol>
+<li>使用vue框架根据传入数据生成页面。</li>
+<li>search：根据搜索结果生成的新的页面。</li>
+<li>使用sessionStorage和localStorage完成部分页面跳转时的数据传输问题。</li>
+<li>使用window.location完成部分数据传输问题。 <strong>注：当传输内容单一时，使用location能轻松完成传输，如点击某个商品，跳转到指定界面。而当数据可能会很多的时候，就不能使用这种方法了，如账户注册。正常情况下应该是get数据库内容。</strong></li>
+<li>通过settimeout实现banner的轮播。</li>
+<li>登陆、注销、注册功能的实现。</li>
+<li>商品加入购物车、关键字搜索、结账功能的实现。
         
         <p class="article-more-link">
-            <a href="/2020/03/19/market/#more">
+            <a href="/2020/04/09/tmall/#more">
                 <span class="vm">阅读更多</span>
                 <i class="icon-arrow-double-right vm"></i>    
             </a>
@@ -218,6 +223,95 @@
         
         <p class="article-more-link">
             <a href="/2020/03/19/restaurant/#more">
+                <span class="vm">阅读更多</span>
+                <i class="icon-arrow-double-right vm"></i>    
+            </a>
+        </p>
+        
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2020/03/12/market/">仓库管理系统</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="www.programape.top/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2020-03-12T07:42:45.000Z" itemprop="datePublished">2020-03-12</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/SVG/" rel="tag">SVG</a>, <a class="article-tag-link" href="/tags/canvas/" rel="tag">canvas</a>, <a class="article-tag-link" href="/tags/hash/" rel="tag">hash</a>, <a class="article-tag-link" href="/tags/localStorage/" rel="tag">localStorage</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h4 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h4><pre><code>本例使用SVG和canvas两种图形工具，根据点击事件和选择生成图形。效果图如下</code></pre>
+<img src = "/market/img/market.png" width = "800px" height = "800px">
+
+<p>↓↓末尾可以进入demo↓↓</p>
+<hr>
+        
+        <p class="article-more-link">
+            <a href="/2020/03/12/market/#more">
+                <span class="vm">阅读更多</span>
+                <i class="icon-arrow-double-right vm"></i>    
+            </a>
+        </p>
+        
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2020/04/09/vue%E5%B0%8F%E7%BB%93%E4%B8%80/">vue小结一</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="www.programape.top/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2020-04-08T18:12:13.000Z" itemprop="datePublished">2020-04-09</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/vue/" rel="tag">vue</a>, <a class="article-tag-link" href="/tags/vue%E5%B0%8F%E7%BB%93/" rel="tag">vue小结</a>, <a class="article-tag-link" href="/tags/%E6%96%87%E7%AB%A0/" rel="tag">文章</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><pre><code>好记性不如烂笔头！</code></pre><h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><h4 id="vue实例"><a href="#vue实例" class="headerlink" title="vue实例"></a>vue实例</h4><p>  其实vue可以看成一个全面的构造函数，所以新建一个vue实例的时候需要<br>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">var</span> str2 = <span class="string">"stringTest"</span>;</span><br><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">	el: <span class="string">"#test"</span>,</span><br><span class="line">	data: &#123;</span><br><span class="line">		str = str2 <span class="comment">//=&gt;此处将str2的值赋予vm实例的str数据。</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><br>  在这段代码中，vm是一个vue实例。el是一个选择器，选中的dom节点可以使用vue的后续功能：如模板、计算属性等。而data则是定义在这个选中的dom节点后续的vue操作中可以使用的数据。</p>
+<h4 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h4><p>  v-bind可缩写为“:”，可以使用在模板语法中，如当我们需要输出一个字符串时，可以这样写。<br>  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span> = <span class="string">"test"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;str&#125;&#125;<span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- =&gt;stringTest，即输出vm实例的str数据 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+        
+        <p class="article-more-link">
+            <a href="/2020/04/09/vue%E5%B0%8F%E7%BB%93%E4%B8%80/#more">
                 <span class="vm">阅读更多</span>
                 <i class="icon-arrow-double-right vm"></i>    
             </a>
@@ -480,96 +574,6 @@
         
         <p class="article-more-link">
             <a href="/2020/03/22/inputEmail/#more">
-                <span class="vm">阅读更多</span>
-                <i class="icon-arrow-double-right vm"></i>    
-            </a>
-        </p>
-        
-        
-    </section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2020/03/22/%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BAblog/">建立个人blog</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="www.programape.top/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2020-03-22T08:17:19.000Z" itemprop="datePublished">2020-03-22</time>
-</a>
-
-            
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/blog/" rel="tag">blog</a>, <a class="article-tag-link" href="/tags/git/" rel="tag">git</a>, <a class="article-tag-link" href="/tags/hexo/" rel="tag">hexo</a>, <a class="article-tag-link" href="/tags/theme/" rel="tag">theme</a>, <a class="article-tag-link" href="/tags/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B/" rel="tag">从零开始</a>
-</div>
-
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <h4 id="写在开头："><a href="#写在开头：" class="headerlink" title="写在开头："></a>写在开头：</h4><pre><code>我的个人blog的搭建，多亏了网上各路神仙大佬的帖子、blog和问答。
-介于借鉴、学习、拜读过的文章太多，就不一一列出，烦请谅解。</code></pre><hr>
-<h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><p>  建立自己的github个人主页，参考我的<br>  <a href="/2020/03/22/Git个人主页的建立/">Git个人主页的建立</a><br>  <a href="/2020/03/22/Git的使用/">Git使用</a></p>
-<hr>
-<h4 id="那么现在开始吧。"><a href="#那么现在开始吧。" class="headerlink" title="那么现在开始吧。"></a>那么现在开始吧。</h4><h5 id="域名注册"><a href="#域名注册" class="headerlink" title="域名注册"></a>域名注册</h5><p>  选一个你喜欢的服务商（如阿里云、腾讯云、天翼云等等），然后想一个域名名字，查询这个域名是否已经有人买下了。如我是在阿里云里买的域名：programape.top。</p>
-        
-        <p class="article-more-link">
-            <a href="/2020/03/22/%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BAblog/#more">
-                <span class="vm">阅读更多</span>
-                <i class="icon-arrow-double-right vm"></i>    
-            </a>
-        </p>
-        
-        
-    </section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2020/03/22/Git%E7%9A%84%E4%BD%BF%E7%94%A8/">Git的使用</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="www.programape.top/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2020-03-22T08:16:53.000Z" itemprop="datePublished">2020-03-22</time>
-</a>
-
-            
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/git/" rel="tag">git</a>, <a class="article-tag-link" href="/tags/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B/" rel="tag">从零开始</a>
-</div>
-
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <h4 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h4><pre><code>Git是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。
-在往后工作、生活、学习和交流中都会经常用到，功能强大，在这里稍微做个总结。</code></pre><h4 id="从零开始学git"><a href="#从零开始学git" class="headerlink" title="从零开始学git"></a>从零开始学git</h4><hr>
-<h5 id="git安装"><a href="#git安装" class="headerlink" title="git安装"></a>git安装</h5><p>  从官网下载安装包（官网地址：<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a>），下载后安装即可。<br>  <img src="/git1.png" alt="git下载"><br>
-        
-        <p class="article-more-link">
-            <a href="/2020/03/22/Git%E7%9A%84%E4%BD%BF%E7%94%A8/#more">
                 <span class="vm">阅读更多</span>
                 <i class="icon-arrow-double-right vm"></i>    
             </a>

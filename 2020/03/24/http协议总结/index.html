@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+
+    
+
+    
+
+    <title>http协议总结 | Travelling</title>
+    <meta name="author" content="Travelling" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="HTTP简介  超文本传输协议（Hyper Text Transfer Protocol）是一种用于分布式、协作式和超媒体信息系统的应用层协议。HTTP是万维网的数据通信的基础。HTTP概述HTTP即是一个客户端终端与服务器端之间，请求和应答的标准。HTTP可以在任何互联网协议或其他网络上实现。它假定了其下层协议提供可靠的传输。HTTP工作原理HTTP协议定义了客户端如何从服务器请求页面，服务器如何传送页面给客户端。采用的是请求/相应模型，客户端发出请求报文（包含请求方..." />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+
+    
+    <link rel="alternate" href="/atom.xml" title="Travelling" type="application/atom+xml">
+    
+    
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'icomoon';
+        src: url("/fonts/icomoon.eot?q628ml");
+        src: url("/fonts/icomoon.eot?q628ml#iefix") format('embedded-opentype'),
+             url("/fonts/icomoon.ttf?q628ml") format('truetype'),
+             url("/fonts/icomoon.woff?q628ml") format('woff'),
+             url("/fonts/icomoon.svg?q628ml#icomoon") format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+    </style>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!--[if lt IE 9]>
+    <style type="text/css">
+    .nav-inner {top:0;}
+    .author-meta {position:static;top:0;}
+    .search-form {height:36px;}
+    </style>
+    <script type="text/javascript" src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <![endif]-->
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+
+    <main class="app">
+        <header id="header" class="header clearfix">
+    <div id="nav" class="nav">
+    <div class="nav-mobile">
+        <button id="open-panel" class="open-panel nav-mobile-item"><i class="icon-documents"></i></button>
+        <h1 class="nav-mobile-title nav-mobile-item">Travelling</h1>
+        <button id="open-menus" class="open-panel nav-mobile-item"><i class="icon-library"></i></button>
+    </div>
+
+    <nav id="nav-inner" class="nav-inner">
+        
+            <a class="nav-item" href="/">
+                <span class="nav-text">首页</span>
+            </a>
+        
+            <a class="nav-item" href="/archives">
+                <span class="nav-text">归档</span>
+            </a>
+        
+            <a class="nav-item" href="/tags/">
+                <span class="nav-text">标签</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/demo/">
+                <span class="nav-text">demo</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/doc/">
+                <span class="nav-text">doc</span>
+            </a>
+        
+            <a class="nav-item" href="/about">
+                <span class="nav-text">关于</span>
+            </a>
+        
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <!-- <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="www.programape.top"></form> -->
+
+        
+        
+        
+        
+
+        
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTP简介"><span class="toc-number">1.</span> <span class="toc-text">HTTP简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTP概述"><span class="toc-number">2.</span> <span class="toc-text">HTTP概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTP工作原理"><span class="toc-number">3.</span> <span class="toc-text">HTTP工作原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTP特性"><span class="toc-number">4.</span> <span class="toc-text">HTTP特性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTP请求方法"><span class="toc-number">5.</span> <span class="toc-text">HTTP请求方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#GET-HEAD-POST关系与区别"><span class="toc-number">5.1.</span> <span class="toc-text">GET&#x2F;HEAD&#x2F;POST关系与区别</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTP状态码"><span class="toc-number">6.</span> <span class="toc-text">HTTP状态码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#URL"><span class="toc-number">7.</span> <span class="toc-text">URL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTP请求格式"><span class="toc-number">8.</span> <span class="toc-text">HTTP请求格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTP响应格式"><span class="toc-number">9.</span> <span class="toc-text">HTTP响应格式</span></a></li></ol>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content">
+            <div id="wrapper" class="wrapper" style="max-width: 800px">
+                <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            http协议总结
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="www.programape.top/2020/03/24/http%E5%8D%8F%E8%AE%AE%E6%80%BB%E7%BB%93/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2020-03-24T14:49:35.000Z" itemprop="datePublished">2020-03-24</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/http/" rel="tag">http</a>, <a class="article-tag-link" href="/tags/%E6%96%87%E7%AB%A0/" rel="tag">文章</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h4 id="HTTP简介"><a href="#HTTP简介" class="headerlink" title="HTTP简介"></a>HTTP简介</h4><hr>
+<p>  超文本传输协议（<strong>H</strong>yper <strong>T</strong>ext <strong>T</strong>ransfer <strong>P</strong>rotocol）是一种用于分布式、协作式和超媒体信息系统的应用层协议。HTTP是万维网的数据通信的基础。</p>
+<h4 id="HTTP概述"><a href="#HTTP概述" class="headerlink" title="HTTP概述"></a>HTTP概述</h4><hr>
+<ul>
+<li>HTTP即是一个客户端终端与服务器端之间，请求和应答的标准。</li>
+<li>HTTP可以在任何互联网协议或其他网络上实现。它假定了其下层协议提供可靠的传输。</li>
+</ul>
+<a id="more"></a>
+<h4 id="HTTP工作原理"><a href="#HTTP工作原理" class="headerlink" title="HTTP工作原理"></a>HTTP工作原理</h4><hr>
+<ul>
+<li>HTTP协议定义了客户端如何从服务器请求页面，服务器如何传送页面给客户端。采用的是请求/相应模型，客户端发出请求报文（包含请求方法、URL、协议版本、请求头部、请求数据）。服务器则以状态行作为响应（内容包括协议版本、成功或错误代码、服务器信息、响应头部、响应数据）。</li>
+<li>HTTP请求/响应的流程如下：<ol>
+<li>客户端连接到服务器（客户端一般是指浏览器）</li>
+<li>发送HTTP请求</li>
+<li>服务器接收请求并返回HTTP响应</li>
+<li>释放连接TCP连接（服务器端先关闭连接，客户端被动关闭连接。关闭时间取决于connection模式，close是响应完成立马执行，keepalive则会保持连接一段时间，期间可以继续接收请求。）</li>
+<li>客户端浏览器解析HTML内容</li>
+</ol>
+</li>
+</ul>
+<h4 id="HTTP特性"><a href="#HTTP特性" class="headerlink" title="HTTP特性"></a>HTTP特性</h4><hr>
+<ul>
+<li>HTTP协议是基于TCP/IP协议之上的应用层协议。</li>
+<li>基于请求-响应的模式<br>请求必定是由客户端发出的，即连接必定由客户端发起。</li>
+<li>无状态<br>协议本身不会保存传输的数据</li>
+<li>无连接<br>指完成一次链接的反馈后，服务端马上断开链接，客户端被动断开链接，这样可以节省传输时间。另在http1.1中可以在发送请求时设置为持续链接，即固定时间内无传输之后再断开，可节省持续型连接的传输时间。</li>
+</ul>
+<h4 id="HTTP请求方法"><a href="#HTTP请求方法" class="headerlink" title="HTTP请求方法"></a>HTTP请求方法</h4><hr>
+<p> <strong>HTTP方法是区分大小写的。</strong></p>
+<ul>
+<li><p>GET/HEAD 都是向服务发出请求指定资源的请求。不同的是HEAD不传回资源的本文部分，而值传回“关于该资源的信息”（元信息或元数据）</p>
+</li>
+<li><p>POST 提交数据，请求服务器处理，如上传文件、提交信息等。（该请求可以创建新的资源，或者修改现有的资源）</p>
+</li>
+<li><p>PUT 向指定资源位置上传其最新内容。</p>
+</li>
+<li><p>DELETE 请求服务器删除对应资源（Request-URI标识）</p>
+</li>
+<li><p>TRACE 显示服务器收到的请求。主要用于测试或者debug。</p>
+</li>
+<li><p>OPTIONS 传回服务器对应资源所支持的所有HTTP方法。用“*”代替名字可以用于测试服务器功能是否正常运作。</p>
+</li>
+<li><p>CONNECT HTTP/1.1协议中预留给能够将连接改为管道方式的代理服务器。通常用于SSL加密服务器的链接（经由非加密的HTTP代理服务器）。</p>
+<h5 id="GET-HEAD-POST关系与区别"><a href="#GET-HEAD-POST关系与区别" class="headerlink" title="GET/HEAD/POST关系与区别"></a>GET/HEAD/POST关系与区别</h5><ul>
+<li>通过抓包工具可以看到，当你需要上传数据如登陆、修改自定义图标、搜索等等操作时，使用的是POST指令。可以得知POST指令是专用于上传的。</li>
+<li>而HEAD在我理解更多的时候是用于例如爬虫爬取数据时，并不会先GET整个文件，而是先获得一个标志物，再通过标志物判断是否GET文件。</li>
+<li>至于GET，GET提交的数据会放在URL之后，以?分割URL和传输数据，参数之间以&amp;相连，如tieba.baidu.com/f?kw=%C9%E3%D3%B0。POST方法是把提交的数据放在HTTP包的Body中.</li>
+</ul>
+</li>
+</ul>
+<h4 id="HTTP状态码"><a href="#HTTP状态码" class="headerlink" title="HTTP状态码"></a>HTTP状态码</h4><hr>
+<p><strong>所有HTTP响应的第一行都是状态行，依次是当前HTTP版本号，3位数字组成的状态代码，以及描述状态的短语，彼此由空格分隔。</strong><br>  状态代码的第一个数字代表当前响应的类型：</p>
+<ul>
+<li>1xx消息——请求已被服务器接收，继续处理</li>
+<li>2xx成功——请求已成功被服务器接收、理解、并接受</li>
+<li>3xx重定向——需要后续操作才能完成这一请求</li>
+<li>4xx请求错误——请求含有词法错误或者无法被执行</li>
+<li>5xx服务器错误——服务器在处理某个正确请求时发生错误</li>
+</ul>
+<h4 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h4><hr>
+<ol>
+<li>传送协议。</li>
+<li>层级URL标记符号(为[//],固定不变)</li>
+<li>访问资源需要的凭证信息（可省略）</li>
+<li>服务器。（通常为域名，有时为IP地址）</li>
+<li>端口号。（以数字方式表示，若为HTTP的默认值“:80”可省略）</li>
+<li>路径。（以“/”字符区别路径中的每一个目录名称）</li>
+<li>查询。（GET模式的窗体参数，以“?”字符为起点，每个参数以“&amp;”隔开，再以“=”分开参数名称与数据，通常以UTF8的URL编码，避开字符冲突的问题）</li>
+<li>片段。以“#”字符为起点</li>
+</ol>
+<p>如在 <a href="http://www.luffycity.com:80/news/index.html?id=250&amp;page=1" target="_blank" rel="noopener">http://www.luffycity.com:80/news/index.html?id=250&amp;page=1</a> 中<br><strong>http</strong> ————————是协议<br><strong>80</strong> —————————是服务器默认网络端口，默认的时候可以省略<br><strong>/news/index.html</strong>——是路径<br><strong>?id=280&amp;page=1</strong>——是查询</p>
+<h4 id="HTTP请求格式"><a href="#HTTP请求格式" class="headerlink" title="HTTP请求格式"></a>HTTP请求格式</h4><hr>
+<ul>
+<li>第一部分：请求行，第一行，需要表明请求类型，请求对象，以及http协议版本。</li>
+<li>第二部分：包含指出目的地的Host，客户端的数据等等</li>
+<li>第三部分：空行，必须留一个空行</li>
+<li>第四部分：请求主体。如POST需要上传什么、PUT需要上传什么之类的。</li>
+</ul>
+<h4 id="HTTP响应格式"><a href="#HTTP响应格式" class="headerlink" title="HTTP响应格式"></a>HTTP响应格式</h4><hr>
+<ul>
+<li>第一部分：状态行，由HTTP协议版本号，状态码，状态消息 三部分组成。</li>
+<li>第二部分：消息报头，用来说明客户端要使用的一些附加信息，如时间信息。</li>
+<li>第三部分：空行，必须留一个空行</li>
+<li>第四部分：响应正文，服务器返回给客户端的文本信息。</li>
+</ul>
+
+        
+    </section>
+</article>
+
+
+
+<a id="pagenext" href="/2020/03/22/inputEmail/" class="article-next" title="输入邮箱自提醒"><i class="icon-arrow-right"></i></a>
+
+
+<a id="pageprev" href="/2020/04/09/tmall/" class="article-prev" title="天猫首页"><i class="icon-arrow-left"></i></a>
+
+
+
+<div class="comments">
+    <div id="comments"></div>
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+    new Gitalk({
+        clientID: "e190f11846edf6d4039b",
+        clientSecret: "01264c9dcb3d01120050f1536accb08187e01cc3",
+        repo: "travelling-coder.github.io",
+        owner: "travelling-coder",
+        admin: ["travelling-coder"],
+        id: "2020/03/24/http协议总结",
+        distractionFreeMode: true,
+        title: "http协议总结",
+        body: "www.programape.top/2020/03/24/http%E5%8D%8F%E8%AE%AE%E6%80%BB%E7%BB%93/",
+        labels: ["http","文章"]
+    }).render('comments');
+    </script>
+</div>
+
+
+            </div>
+        </div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+
+    
+</footer>
+
+    </main>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var nodes = {
+            nav: $('#nav'),
+            aside: $('#aside'),
+            asideInner: $('#aside-inner'),
+            navInner: $('#nav-inner')
+        };
+
+        var doing = false;
+        nodes.asideInner.on('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function() {
+            if (nodes.aside.hasClass('mobile-open')) {
+                nodes.aside.removeClass('mobile-open');
+            } else {
+                nodes.aside.removeClass('mobile-close panel-show');
+            }
+            doing = false;
+        });
+        $('#open-panel, #aside-mask').on('click', function() {
+            if (doing) {
+                return;
+            }
+
+            if (nodes.aside.hasClass('panel-show')) {
+                nodes.aside.addClass('mobile-close');
+            } else {
+                nodes.aside.addClass('mobile-open panel-show');
+            }
+        });
+        $('#open-menus').on('click', function() {
+            nodes.navInner.slideToggle();
+        });
+
+        if (window.innerWidth <= 960) {
+            setTimeout(function() {
+                nodes.navInner.slideUp();
+            }, 3000);
+        }
+    });
+    </script>
+    
+        
+<script src="/js/scrollspy.min.js"></script>
+
+        <script type="text/javascript">
+        $(document.body).scrollspy({target: '#aside-inner'});
+
+        $(window).on('resize', function() {
+            var hw = $('#header').width();
+            var ww = $('#wrapper').width();
+            var space = ($(this).width() - hw - ww) / 2 / 2;
+
+            var pageprev = $('#pageprev');
+            var pagenext = $('#pagenext');
+            var avg = (pageprev.width() + pagenext.width()) / 2
+
+            if(space > avg) {
+                var len = space - avg / 2;
+                var styles = {position: 'fixed', top: '50%', marginTop: - (pageprev.width() + pagenext.width()) / 4}
+                pageprev.css($.extend({left: len + avg}, styles));
+                pagenext.css($.extend({right: len}, styles));
+            } else {
+                pageprev.removeAttr('style');
+                pagenext.removeAttr('style');
+            }
+        }).trigger('resize');
+        </script>
+    
+
+</body>
+</html>

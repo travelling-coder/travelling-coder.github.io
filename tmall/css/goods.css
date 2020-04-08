@@ -1,0 +1,148 @@
+#mineBox{
+	width: 1013px;
+	margin: 0 auto;
+	text-align: center;
+	position: relative;
+}
+.goodsTitle{
+	border: 1px solid grey;
+	margin-top: 3px;
+}
+/* 首图 */
+#pictureShow{
+	margin-left: 0px;
+	box-sizing: border-box;
+	border: 1px solid #aa0000;
+	width: 430px;
+	height: 533px;
+}
+#pictureShow img{
+	max-width: 428px;
+	max-height: 428px;
+}
+#minGoods{
+	text-align: left;
+}
+#minGoods img{
+	max-width: 100px;
+	max-height: 100px;
+	margin-left: 3px;
+	margin-top: 1px;
+	border: 1px solid #d4d4d4;
+}
+#minGoods img:hover{
+	border: 1px solid #000000;
+}
+/* 展示图 */
+.goodsSellInfo{
+	width: calc(100% - 430px);
+	position: absolute;
+	top: 260px;
+	/* top: 290px; */
+	left: 430px;
+	text-align: left;
+	height: 530px;
+	box-sizing: border-box;
+	padding-left: 50px;
+}
+#describe{
+	/* background-color: #f1f1f1; */
+	font-weight: bold;
+	font-size: 20px;
+	padding: 10px;
+	margin: 20px 0px;
+}
+#goodsPrice{
+	font-size: 14px;
+	background-color: #f1f1f1;
+}
+#goodsPrice strong{
+	color: red;
+	font-size: 25px;
+}
+#goodsPrice table td{
+	min-width: 100px;
+	height: 50px;
+	padding-left: 10px;
+}
+#goodsPrice b{
+	text-decoration: line-through;
+	font-size: 18px;
+}
+#sellingGoods{
+	margin-top: 20px;
+}
+#sellingGoods td{
+	height: 40px;
+	min-width: 130px;
+	position: relative;
+}
+#sellingGoods input{
+	width: 35px;
+	text-align: right;
+}
+#up,#down{
+	height: 13px;
+	width: 15px;
+	line-height: 5px;
+	font-size: 14px;
+	padding: 1px;
+	position: absolute;
+}
+#up{
+	top: 7px;
+}
+#down{
+	top: 20px;
+}
+#go,#che{
+	border: none;
+	width: 100px;
+	height: 40px;
+	background-color: #c60000;
+	font-size: 16px;
+	color: white;
+	outline: none;
+}
+#go:hover,#che:hover{
+	background-color: #a70000;
+}
+#show_talk{
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 10px;
+	text-align: left;
+}
+#show_b,#talk_b{
+	width: 100px;
+	height: 30px;
+	border: 1px solid #bdbdbd;
+	border-style: 0px 0px 1px 0px;
+	font-size: 16px;
+	outline: none;
+}
+#show,#talk{
+	border: 1px solid #bdbdbd;
+	margin-top: -1px;
+	height: 300px;
+	padding: 30px;
+	font-size: 20px;
+}
+.clicked{
+	border: 1px solid grey !important;
+	border-bottom: none !important;
+	background-color: #000000;
+	color: white;
+}
+
+
+#goods-sell td{
+	min-width: 100px;
+	border: 1px solid #cfcfcf;
+}
+#goods-sell tr{
+	border: 1px solid #cfcfcf;
+}
+#goods-sell{
+	width: 1013px;
+}

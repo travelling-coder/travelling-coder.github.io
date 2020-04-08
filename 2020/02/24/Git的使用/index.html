@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+
+    
+
+    
+
+    <title>Git的使用 | Travelling</title>
+    <meta name="author" content="Travelling" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="写在前面Git是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。在往后工作、生活、学习和交流中都会经常用到，功能强大，在这里稍微做个总结。从零开始学gitgit安装  从官网下载安装包（官网地址：https://git-scm.com/downloads），下载后安装即可。      安装过程中，可以设置默认编辑器，默认使用vim，也可以自定义，点击Browse，添加第三方编辑器.exe即可。    安装成功后，在开始菜单中找到Git文件夹，其中Git ..." />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+
+    
+    <link rel="alternate" href="/atom.xml" title="Travelling" type="application/atom+xml">
+    
+    
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'icomoon';
+        src: url("/fonts/icomoon.eot?q628ml");
+        src: url("/fonts/icomoon.eot?q628ml#iefix") format('embedded-opentype'),
+             url("/fonts/icomoon.ttf?q628ml") format('truetype'),
+             url("/fonts/icomoon.woff?q628ml") format('woff'),
+             url("/fonts/icomoon.svg?q628ml#icomoon") format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+    </style>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!--[if lt IE 9]>
+    <style type="text/css">
+    .nav-inner {top:0;}
+    .author-meta {position:static;top:0;}
+    .search-form {height:36px;}
+    </style>
+    <script type="text/javascript" src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <![endif]-->
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+
+    <main class="app">
+        <header id="header" class="header clearfix">
+    <div id="nav" class="nav">
+    <div class="nav-mobile">
+        <button id="open-panel" class="open-panel nav-mobile-item"><i class="icon-documents"></i></button>
+        <h1 class="nav-mobile-title nav-mobile-item">Travelling</h1>
+        <button id="open-menus" class="open-panel nav-mobile-item"><i class="icon-library"></i></button>
+    </div>
+
+    <nav id="nav-inner" class="nav-inner">
+        
+            <a class="nav-item" href="/">
+                <span class="nav-text">首页</span>
+            </a>
+        
+            <a class="nav-item" href="/archives">
+                <span class="nav-text">归档</span>
+            </a>
+        
+            <a class="nav-item" href="/tags/">
+                <span class="nav-text">标签</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/demo/">
+                <span class="nav-text">demo</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/doc/">
+                <span class="nav-text">doc</span>
+            </a>
+        
+            <a class="nav-item" href="/about">
+                <span class="nav-text">关于</span>
+            </a>
+        
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <!-- <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="www.programape.top"></form> -->
+
+        
+        
+        
+        
+
+        
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#写在前面"><span class="toc-number">1.</span> <span class="toc-text">写在前面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#从零开始学git"><span class="toc-number">2.</span> <span class="toc-text">从零开始学git</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#git安装"><span class="toc-number">2.1.</span> <span class="toc-text">git安装</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#git的四个工作区"><span class="toc-number">2.2.</span> <span class="toc-text">git的四个工作区</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#git基本命令、用法"><span class="toc-number">2.3.</span> <span class="toc-text">git基本命令、用法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#创建版本库"><span class="toc-number">2.3.1.</span> <span class="toc-text">创建版本库</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#命令说明"><span class="toc-number">2.3.2.</span> <span class="toc-text">命令说明</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#修改文件"><span class="toc-number">2.3.3.</span> <span class="toc-text">修改文件</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#回滚版本"><span class="toc-number">2.3.4.</span> <span class="toc-text">回滚版本</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参考资料："><span class="toc-number">3.</span> <span class="toc-text">参考资料：</span></a></li></ol>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content">
+            <div id="wrapper" class="wrapper" style="max-width: 800px">
+                <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            Git的使用
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="www.programape.top/2020/02/24/Git%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2020-02-24T08:16:53.000Z" itemprop="datePublished">2020-02-24</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/git/" rel="tag">git</a>, <a class="article-tag-link" href="/tags/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B/" rel="tag">从零开始</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h4 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h4><pre><code>Git是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。
+在往后工作、生活、学习和交流中都会经常用到，功能强大，在这里稍微做个总结。</code></pre><h4 id="从零开始学git"><a href="#从零开始学git" class="headerlink" title="从零开始学git"></a>从零开始学git</h4><hr>
+<h5 id="git安装"><a href="#git安装" class="headerlink" title="git安装"></a>git安装</h5><p>  从官网下载安装包（官网地址：<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a>），下载后安装即可。<br>  <img src="/git1.png" alt="git下载"><br>  <a id="more"></a><br>  安装过程中，可以设置默认编辑器，默认使用vim，也可以自定义，点击Browse，添加第三方编辑器.exe即可。<br>  <img src="/git2.png" alt="git安装图"><br>  安装成功后，在开始菜单中找到Git文件夹，其中Git GUI为用户界面模式，Git Bash为命令行模式。<br>  由于git是分布式管理工具，使用前还需要最后一步设置，安装命令如下：<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;Your Name&quot;    &#x2F;&#x2F;设置用户名</span><br><span class="line">git config --global user.email &quot;you@example.com&quot;    &#x2F;&#x2F;设置用户邮箱</span><br><span class="line">git config --list    &#x2F;&#x2F;查看设置</span><br><span class="line">&#x2F;&#x2F;git config --global 参数，有了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然你也可以对某个仓库指定的不同的用户名和邮箱。</span><br><span class="line">&#x2F;&#x2F;配置git的当前仓库邮箱和用户名配置有2种方式: a.直接不使用--global；b.使用--local。</span><br><span class="line">git config user.name &quot;Your Name&quot; </span><br><span class="line">git config user.email &quot;you@example.com&quot; </span><br><span class="line">git config --local  user.name &quot;Your Name&quot;  </span><br><span class="line">git config --local user.email &quot;you@example.com&quot;</span><br></pre></td></tr></table></figure></p>
+<p>  <img src="/git3.png" alt="git安装图"><br>  如果使用github，还需要进行下面的配置：</p>
+<ul>
+<li>生成公钥：使用命令ssh-keygen -t rsa -C “<a href="mailto:you@example.com">you@example.com</a>“，将前面邮箱换成你注册的github邮箱，一路回车就行了。</li>
+<li>可以在用户主目录里找到.ssh目录（/c/Users/DELL/.ssh/），里面有id_rsa 和 id_rsa.pub两个文件，找到公钥id_rsa.pub，打开文件复制公钥。</li>
+<li>登陆GitHub，打开“Settings”-&gt; “Account”，“SSH Keys”页面，然后，点击“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容。</li>
+</ul>
+<h5 id="git的四个工作区"><a href="#git的四个工作区" class="headerlink" title="git的四个工作区"></a>git的四个工作区</h5><p>  <img src="/git4.png" alt="git安装图"></p>
+<ul>
+<li>Workspace：工作区，就是你平时存放项目代码的地方。</li>
+<li>Index / Stage：暂存区，用于临时存放你的改动，一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index），保存即将提交到文件列表信息；</li>
+<li>Repository：本地仓库，就是存放项目代码的位置，这里面有你提交到所有版本的数据。其中HEAD指向最新放入仓库的版本；工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。</li>
+<li>Remote：远程仓库，托管代码的服务器，可以简单的认为是你项目组中的一台电脑用于远程数据交换。</li>
+</ul>
+<h5 id="git基本命令、用法"><a href="#git基本命令、用法" class="headerlink" title="git基本命令、用法"></a>git基本命令、用法</h5><h6 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h6><ul>
+<li>创建git目录相关命令<blockquote>
+<p>cd（进入某个目录）<br>mkdir（创建文件夹）<br>pwd（查看当前所在目录）<br>ls（显示指定工作目录下的文件列表）</p>
+</blockquote>
+</li>
+<li>初始化，用git init来初始化git版本库并在当前文件夹创建一个.git文化夹。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h6 id="命令说明"><a href="#命令说明" class="headerlink" title="命令说明"></a>命令说明</h6><p>  当我要新增一个叫test.txt的测试文件到远程仓库中时，我需要用到的命令有<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">$ git add test.txt</span><br><span class="line">$ git commit</span><br><span class="line">$ git push</span><br></pre></td></tr></table></figure><br>  其中</p>
+<ul>
+<li>git status ：检查提交代码前修改了什么内容，查看当前Git目录下各文件的状态。</li>
+<li>git add：将修改的文件添加到暂存区。可以添加文件或者目录，也可以使用通配符。修改了代码，不管是增加、删除、修改文件这些操作，都是使用git add将修改的文件添加到暂存区。</li>
+<li>git commit：将暂存区文件提交到仓库，直接调用git commit会弹出编辑器，输入提交日志（如果是多行日志，建议使用）；针对单行日志提交的情况，可以使用命令：git commit -m “日志信息” 。如果已经执行了git commit命令，还有需要修改commit日志或者需要修改提交的文件，可以使用git commit –amend修改上一次commit。</li>
+<li>git push -u origin master：将本地的master分支推送到origin主机，同时指定origin为默认主机，后面就可以不加任何参数使用git push了。</li>
+<li>git remote add <name> <url>，添加远程仓库。以github为例：git remote add origin git@github.com:&lt;username&gt;/&lt;reponame&gt;.git。<br><img src="/git5.png" alt="基础命令"></li>
+</ul>
+<h6 id="修改文件"><a href="#修改文件" class="headerlink" title="修改文件"></a>修改文件</h6><p>  修改文件后，通过git status查看修改了哪些文件。如果想知道详细的修改，使用git diff。<br>  <strong>使用git add命令将修改文件添加到暂存区，再执行git commit和git push命令提交代码。如果git push出现冲突，先执行git pull命令，解决冲突后再提交代码。</strong><br>  命令说明：</p>
+<ul>
+<li>git diff [&lt;path&gt;…]：查看当前工作区的区别，diff对比的是当前工作区与最后一次commit提交    的代码的修改。命令参数可以指定文件目录或文件。</li>
+<li>git diff –cached或 git diff –staged：显示暂存区(已add但未commit文件)和最后一次commit(HEAD)之间的所有文件的修改，git diff –cached和git diff –staged的作用相同。</li>
+<li>git diff [&lt;options&gt;] &lt;commit&gt; &lt;commit&gt; [–] [&lt;path&gt;…]：对比两次提交的不同，commit是两次提交的版本号。</li>
+<li>git log：获得历史修改记录，常用的还可以增加–stat参数，参考具体修改了哪些文件。<br><img src="/git6.png" alt="log示例"></li>
+<li>git pull：取回远程仓库某个分支的更新，再与本地的指定分支合并。</li>
+</ul>
+<h6 id="回滚版本"><a href="#回滚版本" class="headerlink" title="回滚版本"></a>回滚版本</h6><ol>
+<li><p>git reset<br>修改HEAD的位置，即将HEAD指向的位置改变为之前存在的某个版本。如果想回滚到之前的某个版本，可以使用这个命令。<br><strong>如果需要撤销的代码已经push到远程仓库，执行git reset回滚代码后，需要执行git push -f强制提交到远程库，执行git push会报错。</strong><br><em>注意：在Git中，用HEAD表示当前版本，也就是最新的提交，上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写HEAD~100。</em><br>我的理解是可以当做直接回退到多少某一个版本，而那个版本之后的信息将会丢失。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git reset HEAD 文件名  &#x2F;&#x2F;移除不必要的添加到暂存区的文件</span><br><span class="line">$ git reset HEAD^ 或者 commitid &#x2F;&#x2F;回滚到上一次的提交</span><br><span class="line">$ git reset --soft  HEAD^ &#x2F;&#x2F;修改上次提交的信息,即commit -m &quot;修改这里的内容&quot;</span><br><span class="line">$ git reset --soft &#x2F;&#x2F;只是将HEAD引用指向指定的提交，撤销已提交的版本库，工作区跟暂存区的内容不会改变</span><br><span class="line">$ git reset --mixed &#x2F;&#x2F;（默认选项）将HEAD指向指定的提交，暂存区的内容随之改变，工作区内容不变</span><br><span class="line">$ git reset --hard &#x2F;&#x2F;将HEAD指向指定的提交，暂存区跟工作区都会改变</span><br></pre></td></tr></table></figure></li>
+<li><p>git revert<br>撤销某次提交，这次提交的commit和history都会保留，并且把这次撤销作为一次新的提交。如果只是想撤销某一次提交，又想保留这次提交后面的版本，可以使用使用“git revert -n 版本号”命令来执行revert。<br><strong>在执行完git revert之后，需要执行commit和push命令来提交修改。</strong><br>revert通过反向对比来得到某个版本改动之前的代码，然后再将得到的代码进行一次新的提交。即之前的代码能够找到，但又回溯到了目标版本号。</p>
+<p>下面举例说明一下reset和revert的区别。首先假设我们提交了三次版本：版本1、版本2、版本3。如下图所示：<br><img src="/git7.png" alt="版本示意"></p>
+</li>
+</ol>
+<h4 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h4><ol>
+<li>git使用教程<br><a href="https://blog.csdn.net/qq_35206244/article/details/97698815" target="_blank" rel="noopener">https://blog.csdn.net/qq_35206244/article/details/97698815</a><br><a href="https://blog.csdn.net/a7442358/article/details/50387961" target="_blank" rel="noopener">https://blog.csdn.net/a7442358/article/details/50387961</a></li>
+<li>git的四个区<br><a href="https://www.cnblogs.com/qdhxhz/p/9757390.html" target="_blank" rel="noopener">https://www.cnblogs.com/qdhxhz/p/9757390.html</a></li>
+<li>Git恢复之前版本的两种方法reset、revert（图文详解）<br><a href="https://blog.csdn.net/yxlshk/article/details/79944535" target="_blank" rel="noopener">https://blog.csdn.net/yxlshk/article/details/79944535</a></li>
+</ol>
+
+        
+    </section>
+</article>
+
+
+
+
+<a id="pageprev" href="/2020/02/24/Git%E4%B8%AA%E4%BA%BA%E4%B8%BB%E9%A1%B5%E7%9A%84%E5%BB%BA%E7%AB%8B/" class="article-prev" title="Git个人主页的建立"><i class="icon-arrow-left"></i></a>
+
+
+
+<div class="comments">
+    <div id="comments"></div>
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+    new Gitalk({
+        clientID: "e190f11846edf6d4039b",
+        clientSecret: "01264c9dcb3d01120050f1536accb08187e01cc3",
+        repo: "travelling-coder.github.io",
+        owner: "travelling-coder",
+        admin: ["travelling-coder"],
+        id: "2020/02/24/Git的使用",
+        distractionFreeMode: true,
+        title: "Git的使用",
+        body: "www.programape.top/2020/02/24/Git%E7%9A%84%E4%BD%BF%E7%94%A8/",
+        labels: ["git","从零开始"]
+    }).render('comments');
+    </script>
+</div>
+
+
+            </div>
+        </div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+
+    
+</footer>
+
+    </main>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var nodes = {
+            nav: $('#nav'),
+            aside: $('#aside'),
+            asideInner: $('#aside-inner'),
+            navInner: $('#nav-inner')
+        };
+
+        var doing = false;
+        nodes.asideInner.on('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function() {
+            if (nodes.aside.hasClass('mobile-open')) {
+                nodes.aside.removeClass('mobile-open');
+            } else {
+                nodes.aside.removeClass('mobile-close panel-show');
+            }
+            doing = false;
+        });
+        $('#open-panel, #aside-mask').on('click', function() {
+            if (doing) {
+                return;
+            }
+
+            if (nodes.aside.hasClass('panel-show')) {
+                nodes.aside.addClass('mobile-close');
+            } else {
+                nodes.aside.addClass('mobile-open panel-show');
+            }
+        });
+        $('#open-menus').on('click', function() {
+            nodes.navInner.slideToggle();
+        });
+
+        if (window.innerWidth <= 960) {
+            setTimeout(function() {
+                nodes.navInner.slideUp();
+            }, 3000);
+        }
+    });
+    </script>
+    
+        
+<script src="/js/scrollspy.min.js"></script>
+
+        <script type="text/javascript">
+        $(document.body).scrollspy({target: '#aside-inner'});
+
+        $(window).on('resize', function() {
+            var hw = $('#header').width();
+            var ww = $('#wrapper').width();
+            var space = ($(this).width() - hw - ww) / 2 / 2;
+
+            var pageprev = $('#pageprev');
+            var pagenext = $('#pagenext');
+            var avg = (pageprev.width() + pagenext.width()) / 2
+
+            if(space > avg) {
+                var len = space - avg / 2;
+                var styles = {position: 'fixed', top: '50%', marginTop: - (pageprev.width() + pagenext.width()) / 4}
+                pageprev.css($.extend({left: len + avg}, styles));
+                pagenext.css($.extend({right: len}, styles));
+            } else {
+                pageprev.removeAttr('style');
+                pagenext.removeAttr('style');
+            }
+        }).trigger('resize');
+        </script>
+    
+
+</body>
+</html>

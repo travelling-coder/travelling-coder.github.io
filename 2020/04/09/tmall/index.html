@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+
+    
+
+    
+
+    <title>天猫首页 | Travelling</title>
+    <meta name="author" content="Travelling" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="写在前面在实践中熟悉dom、bom、vue、jquery等方面。很遗憾的是没有后台数据库，只能取巧的使用了sessionStorage和localStorage完成数据的储存和传输。实例链接我模拟的天猫首页功能实现使用vue框架根据传入数据生成页面。search：根据搜索结果生成的新的页面。使用sessionStorage和localStorage完成部分页面跳转时的数据传输问题。使用window.location完成部分数据传输问题。 注：当传输内容单一时，使用locatio..." />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+
+    
+    <link rel="alternate" href="/atom.xml" title="Travelling" type="application/atom+xml">
+    
+    
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'icomoon';
+        src: url("/fonts/icomoon.eot?q628ml");
+        src: url("/fonts/icomoon.eot?q628ml#iefix") format('embedded-opentype'),
+             url("/fonts/icomoon.ttf?q628ml") format('truetype'),
+             url("/fonts/icomoon.woff?q628ml") format('woff'),
+             url("/fonts/icomoon.svg?q628ml#icomoon") format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+    </style>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!--[if lt IE 9]>
+    <style type="text/css">
+    .nav-inner {top:0;}
+    .author-meta {position:static;top:0;}
+    .search-form {height:36px;}
+    </style>
+    <script type="text/javascript" src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <![endif]-->
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+
+    <main class="app">
+        <header id="header" class="header clearfix">
+    <div id="nav" class="nav">
+    <div class="nav-mobile">
+        <button id="open-panel" class="open-panel nav-mobile-item"><i class="icon-documents"></i></button>
+        <h1 class="nav-mobile-title nav-mobile-item">Travelling</h1>
+        <button id="open-menus" class="open-panel nav-mobile-item"><i class="icon-library"></i></button>
+    </div>
+
+    <nav id="nav-inner" class="nav-inner">
+        
+            <a class="nav-item" href="/">
+                <span class="nav-text">首页</span>
+            </a>
+        
+            <a class="nav-item" href="/archives">
+                <span class="nav-text">归档</span>
+            </a>
+        
+            <a class="nav-item" href="/tags/">
+                <span class="nav-text">标签</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/demo/">
+                <span class="nav-text">demo</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/doc/">
+                <span class="nav-text">doc</span>
+            </a>
+        
+            <a class="nav-item" href="/about">
+                <span class="nav-text">关于</span>
+            </a>
+        
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <!-- <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="www.programape.top"></form> -->
+
+        
+        
+        
+        
+
+        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#写在前面"><span class="toc-number">1.</span> <span class="toc-text">写在前面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实例链接"><span class="toc-number">2.</span> <span class="toc-text">实例链接</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#功能实现"><span class="toc-number">2.1.</span> <span class="toc-text">功能实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#未处理或未解决的问题"><span class="toc-number">2.2.</span> <span class="toc-text">未处理或未解决的问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#遇到的问题"><span class="toc-number">3.</span> <span class="toc-text">遇到的问题</span></a></li></ol>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content">
+            <div id="wrapper" class="wrapper" style="max-width: 800px">
+                <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            天猫首页
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="www.programape.top/2020/04/09/tmall/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2020-04-08T16:43:06.000Z" itemprop="datePublished">2020-04-09</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/jQuery/" rel="tag">jQuery</a>, <a class="article-tag-link" href="/tags/vue/" rel="tag">vue</a>, <a class="article-tag-link" href="/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/" rel="tag">可视化</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><pre><code>在实践中熟悉dom、bom、vue、jquery等方面。
+很遗憾的是没有后台数据库，只能取巧的使用了sessionStorage和localStorage完成数据的储存和传输。</code></pre><h3 id="实例链接"><a href="#实例链接" class="headerlink" title="实例链接"></a>实例链接</h3><p><a href="/tmall/newTmall.html">我模拟的天猫首页</a></p>
+<h4 id="功能实现"><a href="#功能实现" class="headerlink" title="功能实现"></a>功能实现</h4><ol>
+<li>使用vue框架根据传入数据生成页面。</li>
+<li>search：根据搜索结果生成的新的页面。</li>
+<li>使用sessionStorage和localStorage完成部分页面跳转时的数据传输问题。</li>
+<li>使用window.location完成部分数据传输问题。 <strong>注：当传输内容单一时，使用location能轻松完成传输，如点击某个商品，跳转到指定界面。而当数据可能会很多的时候，就不能使用这种方法了，如账户注册。正常情况下应该是get数据库内容。</strong></li>
+<li>通过settimeout实现banner的轮播。</li>
+<li>登陆、注销、注册功能的实现。</li>
+<li>商品加入购物车、关键字搜索、结账功能的实现。<a id="more"></a>
+
+</li>
+</ol>
+<h4 id="未处理或未解决的问题"><a href="#未处理或未解决的问题" class="headerlink" title="未处理或未解决的问题"></a>未处理或未解决的问题</h4><ol>
+<li>订单页面。因为思路跟购物车一样，pass。</li>
+<li>数据库的问题。我是通过sessionStorage和localStorage回避了问题，但是很不安全。</li>
+<li>评论的随机展示。思路是随机生成评论数的评论内容，并展示在一个table中，然后为table布局。固定套路，pass。</li>
+</ol>
+<h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><ol>
+<li>v-model在template中无法绑定数据。如我在goods.html中绑定checkbox的value时无法达成。</li>
+<li>vue中vue实例和vue组件中的数据传输问题，vue实例中定义数据，而组件相当于把实例中的数据绑定到组件的某个属性上。</li>
+<li>hexo在编译md时，无法读取math方法，如math.floor等。另外vue的computed属性也无法编译。这个问题还没搞明白。</li>
+</ol>
+
+        
+    </section>
+</article>
+
+
+
+<a id="pagenext" href="/2020/03/24/http%E5%8D%8F%E8%AE%AE%E6%80%BB%E7%BB%93/" class="article-next" title="http协议总结"><i class="icon-arrow-right"></i></a>
+
+
+<a id="pageprev" href="/2020/04/09/vue%E5%B0%8F%E7%BB%93%E4%B8%80/" class="article-prev" title="vue小结一"><i class="icon-arrow-left"></i></a>
+
+
+
+<div class="comments">
+    <div id="comments"></div>
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+    new Gitalk({
+        clientID: "e190f11846edf6d4039b",
+        clientSecret: "01264c9dcb3d01120050f1536accb08187e01cc3",
+        repo: "travelling-coder.github.io",
+        owner: "travelling-coder",
+        admin: ["travelling-coder"],
+        id: "2020/04/09/tmall",
+        distractionFreeMode: true,
+        title: "天猫首页",
+        body: "www.programape.top/2020/04/09/tmall/",
+        labels: ["可视化","jQuery","vue"]
+    }).render('comments');
+    </script>
+</div>
+
+
+            </div>
+        </div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+
+    
+</footer>
+
+    </main>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var nodes = {
+            nav: $('#nav'),
+            aside: $('#aside'),
+            asideInner: $('#aside-inner'),
+            navInner: $('#nav-inner')
+        };
+
+        var doing = false;
+        nodes.asideInner.on('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function() {
+            if (nodes.aside.hasClass('mobile-open')) {
+                nodes.aside.removeClass('mobile-open');
+            } else {
+                nodes.aside.removeClass('mobile-close panel-show');
+            }
+            doing = false;
+        });
+        $('#open-panel, #aside-mask').on('click', function() {
+            if (doing) {
+                return;
+            }
+
+            if (nodes.aside.hasClass('panel-show')) {
+                nodes.aside.addClass('mobile-close');
+            } else {
+                nodes.aside.addClass('mobile-open panel-show');
+            }
+        });
+        $('#open-menus').on('click', function() {
+            nodes.navInner.slideToggle();
+        });
+
+        if (window.innerWidth <= 960) {
+            setTimeout(function() {
+                nodes.navInner.slideUp();
+            }, 3000);
+        }
+    });
+    </script>
+    
+        
+<script src="/js/scrollspy.min.js"></script>
+
+        <script type="text/javascript">
+        $(document.body).scrollspy({target: '#aside-inner'});
+
+        $(window).on('resize', function() {
+            var hw = $('#header').width();
+            var ww = $('#wrapper').width();
+            var space = ($(this).width() - hw - ww) / 2 / 2;
+
+            var pageprev = $('#pageprev');
+            var pagenext = $('#pagenext');
+            var avg = (pageprev.width() + pagenext.width()) / 2
+
+            if(space > avg) {
+                var len = space - avg / 2;
+                var styles = {position: 'fixed', top: '50%', marginTop: - (pageprev.width() + pagenext.width()) / 4}
+                pageprev.css($.extend({left: len + avg}, styles));
+                pagenext.css($.extend({right: len}, styles));
+            } else {
+                pageprev.removeAttr('style');
+                pagenext.removeAttr('style');
+            }
+        }).trigger('resize');
+        </script>
+    
+
+</body>
+</html>

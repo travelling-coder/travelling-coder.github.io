@@ -1,0 +1,356 @@
+body{
+	margin: 0px;
+	font-family: arial;
+}
+.color-red{
+	color: red;!important
+}
+a,a:hover{
+	color: white;
+	text-decoration: none;
+}
+
+#goods-info{
+	margin: 10px auto;
+	width: 1005PX;
+	padding: 50px 10px 10px 10px;
+	/* height: 500px; */
+	background-color: #F5F5F5;
+	display: flex;
+	flex-wrap: wrap;
+	/* margin-top: 500px; */
+}
+#goods-inf{
+	margin: 10px auto;
+	width: 1005PX;
+	padding: 50px 10px 10px 10px;
+	/* height: 500px; */
+	background-color: #F5F5F5;
+	display: flex;
+	flex-wrap: wrap;
+	/* margin-top: 500px; */
+}
+.goods-cell{
+	background-color: white;
+	margin: 8PX 4PX;
+	border: 1px solid #ffffff;
+	width: 189px;
+	height: 258px;
+	text-align: center;
+	box-sizing: border-box;
+	position: relative;
+	float: left;
+}
+#goods-inf .goods-cell{
+	height: 293px;
+}
+.sell-info{
+	
+	width: 100%;
+	height: 30px;
+	position: absolute;
+	top: 260px;
+	/* border: 1px solid black; */
+}
+.sell-info div{
+	height: 30px;
+	padding-top: 5px;
+	border: 1px solid #dadada;
+	box-sizing: border-box;
+	margin: -2px;
+	display: inline-block;
+	color: #949494;
+}
+.sell-info div strong{
+	font-size: 14px;
+	color: #b5562a;
+}
+.goods-cell:hover{
+	border: 1px solid #ff007f;
+}
+.goods-cell img{
+	max-width: 187px;
+	max-height: 187px;
+	/* border: 1px solid #ca7d46; */
+	box-sizing: border-box;
+}
+.goods-cell img:hover{
+	opacity: 0.7;
+}
+.goods-cell-p{
+	position: absolute;
+	/* border: 1px solid black; */
+	width: 189px;
+	height: 40px;
+	padding: 3px 8px 0px 8px;
+	text-align: left;
+	top: 190px;
+	/* text-align: center; */
+	box-sizing: border-box;
+	font-size: 12px;
+	overflow: hidden;
+}
+.goods-cell a{
+	color: #000000;
+	text-decoration: none;
+}
+.goods-cell-p a:hover{
+	font-size: 13px;
+}
+.goods-cell span{
+	color: red;
+	font-size: 24px;
+	position: absolute;
+	top: 225px;
+	left: 6px;
+}
+
+.head-nav{
+	width: 100%;
+	min-width: 1013px;
+	background-color: #F5F5F5;
+	color: grey;
+	font-size: 12px;
+	margin: 0 auto;
+	height: 20px;
+	padding: 3px;
+}
+.head-nav a:hover{
+	color: red;
+	font-weight: 700;
+}
+.head-nav a{
+	text-decoration: none;
+	color: grey;
+	margin: 0px 15px 0px 15px;
+}
+.head-nav-left{
+	float: left;
+	margin-left: calc(50% - 500px);
+}
+.head-nav-right{
+	float: right;
+	margin-right: calc(50% - 500px);
+}
+
+.foot-nav{
+	margin-top: 50px;
+	display: flex;
+	flex-wrap: wrap;
+}
+.foot-nav div{
+	/* border: 1px solid black; */
+	width: 20%;
+	box-sizing: border-box;
+	margin: 0px 10px;
+	flex: 1;
+}
+.foot-nav a{
+	text-decoration: none;
+	color: #000000;
+	display: block;
+	font-size: 14px;
+}
+.grey-line1{
+	position: absolute;
+	top: -3px;
+	width: 100%;
+	height: 2px;
+	background-color: #c7c7c7;
+}
+.grey-line2{
+	position: absolute;
+	top: 100px;
+	width: 100%;
+	height: 2px;
+	background-color: #c7c7c7;
+}
+.foot-bottom{
+	position: absolute;
+	top: 307px;
+}
+.red-line{
+	position: absolute;
+	top: 338px;
+	width: 100%;
+	height: 2px;
+	background-color: #FF0000;
+}
+.foot-last{
+	background-color: #000000;
+	width: 100%;
+	height: 220px;
+	margin-top: 0px;
+}
+.foot-last-about-tmall{
+	margin: 0px auto;
+	/* border: 1px solid white; */
+	width: 980px;
+	height: 200px;
+	box-sizing: border-box;
+	color: white;
+	padding: 15px 0px 5px;
+}
+.foot-last-about-tmall a{
+	font-size: 14px;
+	color: white;
+	text-decoration: none;
+	padding-left: 20px;
+}
+.foot-last-other{
+	margin-top: 30px;
+}
+.foot-last-other a{
+	padding-left: 5px;
+}
+.foot-last-other p{
+	color: #9c9c9c;
+	font-size: 12.1px;
+}
+#banner{
+	/* background-color: #e8e8e8;	 */
+	background-color: #f3f3f3;
+	width: 100%;
+	margin-top: 2px;
+}
+#banner>div{
+	width: 1013px;
+	margin: 0 auto;
+	/* border: 1px solid black; */
+	/* box-sizing: border-box; */
+	padding: 0px;
+}
+#banner img{
+	max-width: 1013px;
+	display: block;
+	margin: auto;
+	height: 390px;
+	/* border: 1px solid black; */
+	/* box-sizing: border-box; */
+}
+#page-top{
+	color: white;
+	width: 1013px;
+	margin: 0 auto;
+	position: relative;
+}
+.left{
+	float: left;
+}
+#head-left{
+	padding: 5px 0px 5px 0px;
+	font-size: 18px;
+	height: 32px;
+	/* padding-top: 10px; */
+	background-color: red;
+	width: 180px;
+	margin-bottom: -2px;
+}
+.head-right{
+	float: left;margin: -20px 0px 0px 200px;
+}
+.head-right span{
+	padding: 0px 20px;
+	line-height: 22px;
+}
+.head-right a{
+	font-size: 16px;
+	color: #000000;
+}
+.head-right a:hover{
+	color: #ff0000;
+}
+#goods-class-nav{
+	 position: absolute;
+	 left: 0px;
+	 top: 32px;
+	 
+	 margin: 0rem;
+	 line-height: 30px;
+	 width: 180px;
+	 color: white;
+	 background-color: #4f4f4f;
+	 opacity: 0.7;
+}
+#goods-class-nav li{
+	padding-left: 14px;
+}
+#goods-class-nav li span{
+	padding-right: 10px;
+}
+.hidden{
+	display: none;
+}
+#search{
+	width: 1013px;
+	height: 100px;
+	margin: 0 auto;
+	text-align: center;
+}
+#search input{
+	margin-top: 15px;
+	border: 2px solid #f90000;
+	width: 300px;
+	height: 35px;
+	outline:none;
+}
+#search input:focus{
+	
+}
+/* 未实现功能.输入框获得焦点,就提高明度,输入内容之后降低明度。留下接口以备后用 */
+#search button{
+	background-color: #f90000;
+	color: white;
+	font-size: 17px;
+	padding: 0;
+	border: none;
+	margin-left: -5px;
+	width: 130px;
+	height: 35px;
+	text-align: center;
+	outline:none;
+}
+
+
+/*登陆 注册界面*/
+.login{
+	/* border: 1px solid black; */
+	width: 1200px;
+	height: 600px;
+	background-repeat: repeat-x;
+	margin: 0 auto;
+	margin-top: 3px;
+	background-image: url(../img/back.jpg);
+	padding-top: 100px;
+}
+.login strong{
+	font-size: 20px;
+}
+.login table{
+	position: relative;
+	margin: 0 auto;
+	width: 400px;
+	border: 1px solid black;
+	background-color: #efedea;
+}
+.login td{
+	min-width: 100px;
+	padding-left: 38px;
+	height: 80px;
+}
+.login input{
+	width: 200px;
+}
+.login button{
+	margin-right: 24px;
+	border: none;
+	outline: none;
+	width: 87px;
+	height: 40px;
+	background-color: #aa0000;
+	color: white;
+	border-radius: 5px;
+}
+.login button:hover{
+	background-color: red;
+}
